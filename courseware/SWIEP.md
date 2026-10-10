@@ -30,3 +30,7 @@ src: ./pages/Day5Deployment.md
 ---
 src: ./pages/Day6Defense.md
 ---
+
+---
+src: ./pages/conclusion.md
+---
