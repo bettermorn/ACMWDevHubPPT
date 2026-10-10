@@ -1,0 +1,105 @@
+# source : https://sli.dev/guide/hosting
+
+name: Deploy pages
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'courseware/**'
+  workflow_dispatch:  
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+ # 🌟 步骤 1：安装 pnpm (必须在 setup-node 之前)
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: latest # 你可以使用 8 或 9，或者 'latest'
+          run_install: false
+          
+# 🌟 步骤 2：设置 Node.js，并开启 pnpm 缓存机制
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+          cache: 'pnpm' 
+          cache-dependency-path: 'courseware/pnpm-lock.yaml' 
+
+      - name: Setup @antfu/ni
+        run: npm i -g @antfu/ni
+
+      - name: Install dependencies
+      # ni 此时会自动调用 pnpm install
+        run: pnpm install
+        working-directory: courseware
+      # 新增步骤：自动检测并创建缺失的 snippets/external.ts 占位文件，防止打包报错
+      - name: Create Mock Snippets if missing
+        run: |
+          mkdir -p snippets
+          if [ ! -f snippets/external.ts ]; then
+            echo "// Temp placeholder for build" > snippets/external.ts
+            echo "console.log('Hello Slidev');" >> snippets/external.ts
+            echo "Created missing snippets/external.ts placeholder."
+          fi
+        working-directory: courseware
+        
+
+      - name: Build Slidev
+      # 在 courseware 目录下构建，并输出到 dist/courseware
+        run: pnpm slidev build SWIEP.md --base /${{github.event.repository.name}}/courseware/ --out dist/courseware
+        working-directory: courseware
+        
+      # ======= 🌟 新增：Playwright & PDF 导出步骤 =======
+      - name: Install Playwright Dependency ⚙️
+        run: pnpm add -D playwright-chromium --ignore-scripts
+        working-directory: courseware
+
+      - name: Install Chromium Browser 🌐
+        run: pnpm exec playwright install chromium
+        working-directory: courseware
+
+    # 安装中文字体，防止导出的 PDF 中文变成乱码/方块
+      - name: Install Chinese Fonts 🇨🇳
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+
+      - name: Export PDF 📄
+        # 导出 PDF 并放入打包目录，这样在线网页上也能直接下载 PDF 
+        run: pnpm slidev export SWIEP.md --output dist/courseware/SWIEP.pdf --timeout 180000
+        working-directory: courseware
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: courseware/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
