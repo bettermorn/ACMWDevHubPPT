@@ -1,0 +1,16 @@
+{
+  "name": "SWIEP",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build SWIEP.md --base /ACMWDevHubPPT/courseware/",
+    "dev": "slidev SWIEP.md --open",
+    "export": "slidev export SWIEP.md"
+  },
+  "dependencies": {
+    "@slidev/cli": "^52.19.1",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "vue": "^3.5.33"
+  }
+}
