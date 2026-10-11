@@ -7,14 +7,17 @@ background: '#1e5f3a'
 # 第2天
 ## 设计作品
 
+智能软件工程
+
 设计作品原型
+
 确定技术选型
 
 ---
 layout: two-cols
 ---
 
-# 第2天第1部分：理论
+# 第2天第1部分设计作品原型：理论
 
 - 智能软件工程的实践
 - 什么是智能软件工程 (Smart Software Engineering / AI4SE)？
@@ -24,7 +27,7 @@ layout: two-cols
 
 ::right::
 
-# 第2天第1部分：实践
+# 第2天第1部分设计作品原型：实践
 
 - 编写用户故事
 - 使用 AI 工具及原型设计工具设计软件作品原型
@@ -218,7 +221,7 @@ export const SimulationViewport: React.FC = () => {
 ```
 ---
 
-# 第2天第1部分实践：用户故事地图与技术方案调研
+# 第2天第1部分设计作品原型实践：用户故事地图与技术方案调研
 ### Practice: User Story Mapping & Tech Stack Investigation
 本周各组要将前期的软件定义转化为具体的研发路线，并完成原型设计。
 
@@ -247,7 +250,6 @@ export const SimulationViewport: React.FC = () => {
 
 
 ---
-
 
 # 第2天智能软件工程学习目标
 
@@ -611,13 +613,13 @@ flowchart LR
 layout: two-cols
 ---
 
-# 第2天第2部分：理论
+# 第2天第2部分技术设计：理论
 - 领域驱动设计方法 Domain-Driven Design (DDD)
 - AI Agent,参考 [AI Agent参考资源](https://github.com/bettermorn/AIAgent/) 自行研究
 
 ::right::
 
-# 第2天第2部分：实践
+# 第2天第2部分技术设计：实践
 
 - 参考[技术参考](https://github.com/bettermorn/IntelligentSWEPractice/wiki/%E6%8A%80%E6%9C%AF%E5%8F%82%E8%80%83), 确认技术方案（语言、平台、框架、架构图；数据分析技术、人工智能算法模型、区块链、虚拟现实技术等）
 - 规划新技术学习
@@ -626,7 +628,7 @@ layout: two-cols
 
 ---
 
-# 第2天技术设计学习目标
+# 第2天第2部分技术设计学习目标
 
 - 理解为什么需要 DDD —— 解决"业务与代码脱节"问题
 - 掌握**战略设计**：限界上下文、通用语言、上下文映射
@@ -1012,7 +1014,7 @@ public class OrderAppService {
 layout: two-cols
 ---
 
-# 第2天技术设计实践任务
+# 第2天第2部分技术设计实践任务
 
 ::left::
 
@@ -1037,5 +1039,5 @@ layout: two-cols
 6. 设计安全与合规
 7. 规划新技术学习
 
-🎤 本周汇报：系统设计技术方案
+🎤 学习成果：系统设计技术方案
 
