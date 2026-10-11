@@ -1,4 +1,3 @@
-
 ---
 theme: default
 class: text-center
