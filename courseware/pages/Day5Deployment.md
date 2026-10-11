@@ -4,10 +4,12 @@ class: text-center
 background: '#1e5f3a'
 ---
 
-# 第五部分
-## 系统发布
+# 第5天
+## 部署发布作品
 
-第 14-17 周
+- 部署作品
+- 完善作品：优化和迭代作品
+
 
 ---
 
@@ -23,13 +25,13 @@ background: '#1e5f3a'
 layout: two-cols
 ---
 
-# 第14周：理论
+# 第5天第1部分：理论
 
 - 部署和发布软件的方法及检查单
 
 ::right::
 
-# 第14周：实践
+# 第5天第1部分：实践
 
 - 部署作品
 
@@ -1929,31 +1931,10 @@ layout: two-cols
 注意： 发布不是一次操作，而是一套可重复、可验证、可回滚的工程流程。
 
 ---
-layout: two-cols
----
-::left::
-# 第15周
+
+# 第5天第2部分
 
 ## 实践
 完善作品：优化和迭代作品
 
 
-:right::
-# 第16周
-
-## 实践
-- 准备答辩材料：幻灯片、演示Demo、答辩问题
-- 参考 [作品答辩评分表](https://github.com/bettermorn/IntelligentSWEPractice/blob/main/Assessment.md#%E4%BD%9C%E5%93%81%E7%AD%94%E8%BE%A9%E8%AF%84%E5%88%86%E8%A1%A8)
-
----
-layout: center
-class: text-center
----
-
-# 第17周
-
-## 🎓 作品答辩
-
-[作品答辩评分表](https://github.com/bettermorn/IntelligentSWEPractice/blob/main/Assessment.md#%E4%BD%9C%E5%93%81%E7%AD%94%E8%BE%A9%E8%AF%84%E5%88%86%E8%A1%A8)
-
-最终成果展示与评审
