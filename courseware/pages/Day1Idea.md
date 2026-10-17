@@ -1145,7 +1145,7 @@ layout: two-cols
 
 # 第1天第3部分项目管理：实践
 
-- 制定项目管理的沟通管理计划和风险管理计划
+- 制定项目管理的沟通管理计划和风险管理计划 (docs/mgmt/communication_mgmt_plan.md 和 docs/mgmt/risk_mgmt_plan.md)
 
 
 ---
