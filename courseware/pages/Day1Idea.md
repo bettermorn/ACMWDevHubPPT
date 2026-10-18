@@ -435,6 +435,30 @@ mkdir -p docs/{requirements,algorithm,software,mgmt,retrospection} \
 - **任务要求**：在 `docs/requirements/problem_definition.md` 中完成 5W1H 报告和产品描述。
 - **检查点**：第一周结束前，各组提交仓库链接，通过 GitHub Issues 获得第一轮反馈。
 
+
+---
+class: text-sm
+---
+
+# Git和GitHub 学习和使用
+## Git参考
+- 理解代码版本控制https://gitee.com/progit/    以及https://git-scm.com/book/zh/v2  
+- 参考视频 [Git详解](https://www.bilibili.com/video/BV1Gv421i7wW) [『教程』一看就懂！Github基础教程](https://www.bilibili.com/video/BV1hS4y1S7wL) 以及其他视频 [github仓库中创建目录](https://www.bilibili.com/video/BV1re411k7qS)
+- 具体细节[Git学习手册](https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-Git-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F)
+
+## GitHub Desktop
+- [GitHub Desktop 使用文档](https://docs.github.com/en/desktop)
+
+## IDE连接GitHub
+
+- [Work with GitHub in VS Code](https://code.visualstudio.com/docs/sourcecontrol/github)
+- 在VS Code中查看代码local history，参考
+[How to view the Git History in Visual Studio Code](https://bobbyhadz.com/blog/view-vscode-local-history) 即查看timeline，open changes.
+- Java: IDEA/Eclipse/Android Studio [GitHub | IntelliJ IDEA Documentation - JetBrains](https://www.jetbrains.com/help/idea/github.html)
+
+
+
+
 ---
 layout: two-cols
 ---
