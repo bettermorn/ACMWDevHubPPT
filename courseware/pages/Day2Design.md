@@ -485,7 +485,9 @@ layout: two-cols
 
 
 ---
+
 # 案例：一个云服务平台用户故事地图
+
 按业务流程（横轴）与商业价值分批（纵轴）绘制。
 
 ![用户故事地图](https://raw.githubusercontent.com/bettermorn/IntelligentSWEPractice/main/courseware/pages/imgs/UserStoryMap.png)
