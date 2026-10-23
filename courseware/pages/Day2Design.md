@@ -14,6 +14,20 @@ background: '#1e5f3a'
 确定技术选型
 
 ---
+
+#  第2天工作任务
+
+1. **用户故事清单 (docs/requirements/user_stories.md)**：
+   * 至少编写 5 个符合 INVEST 规范的用户故事。
+   * 每个故事需配有详细的 验收条件 (Acceptance Criteria)。
+
+2. **原型展示（docs/software/prototype）**：提交利用 AI 生成的交互式原型页面。
+
+3. **技术方案调研报告 (docs/software/architecture.md)**：
+   * 论证核心技术选型。
+   * 列出团队在未来 2 周内需要学习的新技术（制定自学计划与 Milestone）。
+
+---
 layout: two-cols
 ---
 
@@ -23,17 +37,17 @@ layout: two-cols
 - 什么是智能软件工程 (Smart Software Engineering / AI4SE)？
 - 大语言模型 (LLM) 在需求、代码生成与重构中的应用
 - 如何编写符合 INVEST 原则的用户故事 (User Stories)
-- **实践指南**：利用 AI 辅助设计（v0.dev / Figma / React）构建高保真原型
+- **实践指南**：利用 AI 辅助设计构建高保真原型
 
 ::right::
 
 # 第2天第1部分设计作品原型：实践
 
 - 编写用户故事
-- 使用 AI 工具及原型设计工具设计软件作品原型
-- 调研技术方案
+- 使用 AI 工具及原型设计工具设计软件作品原型（包括用户体验UX）
 
-📋 检查：确认软件作品原型设计
+
+📋 检查：确认软件作品原型设计(docs/software/prototype)
 
 ---
 
@@ -101,6 +115,8 @@ layout: two-cols
     And 系统状态栏应显示 "导入成功，包含 1420 个面"
 ```
 
+参考案例：[客服智能体用户故事与验收标准](https://github.com/bettermorn/AIAgent/blob/main/docs/CSAgent_UserStory_AcceptanceCriteria.md)
+
 ---
 class: text-sm
 ---
@@ -121,135 +137,204 @@ class: text-sm
 "Generate a responsive Tailwind React dashboard for a Scientific Simulation Control System. It should contain an interactive 3D canvas placeholder (using Three.js icons), a left sidebar showing the simulation parameters (density, gravity, step size), a bottom panel showing a live-updated charting log for error rates, and a clear run/pause control cluster."为一个科学仿真控制系统生成一个响应式的 Tailwind React 仪表盘。该仪表盘应包含一个交互式 3D 画布占位符（使用 Three.js 图标）、一个显示仿真参数（密度、重力、步长）的左侧边栏、一个显示实时更新的误差率图表日志的底部面板，以及一个清晰的运行/暂停控制组件。
 
 ---
+class: text-sm
+---
 
-# 示例代码：一个简易的三维渲染原型组件 (React)
-### Example Code: Prototype Component for Three.js Viewport
+# AI 辅助原型设计：从自然语言到交互式代码
+### AI-Assisted Prototyping（中文工具版）
+> 大规模开发前，用 AI 快速产出**高保真交互原型**，把需求偏离的风险提前暴露
 
-```tsx{scale: 0.4}
-// src/components/SimulationViewport.tsx
-import React, { useState } from 'react';
+**工具推荐**
+- **一体化 AI 设计平台（国产主力）**：腾讯 **Ardot**、**MasterGo AI**（蓝湖）、**摹客 3 / 小摹 AI**、**即时设计 · 即时 AI**、**Pixso AI**
+- **需求 / 原型驱动（偏产品经理）**：**墨刀 AI Agent 2.0**（PRD 文档 → 可点击原型）、**UXbot**（流程画布 + 一次生成整套应用）
+- **设计稿转代码（D2C / MCP）**：**Ardot MCP**（直连 WorkBuddy / CodeBuddy / Cursor 一键还原代码）、**GemDesign MCP**、**Pixso 研发模式**（HTML / 鸿蒙 ArkUI / SwiftUI / Flutter）
+- **海外对照（需稳定国际网络）**：v0.dev、Bolt.new、Figma Make、Uizard
+- **注意**：**Motiff 妙多**已于 2026-07-31 停服，历史文件需在 2026-11-01 前导出
 
-type SimulationParams = {
-  density: number;
-  viscosity: number;
-};
+**给 AI 的 Prompt 示例（中文，可直接粘贴）**
 
-export const SimulationViewport: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [params, setParams] = useState({
-    density: 1.2,
-    viscosity: 0.01,
-  });
+> 为「汉语学习 Agent（AI 中文助教）」生成一个响应式的 React 学习工作台：左侧为学习档案侧边栏（HSK 等级、已学词量、待复习队列），中间为对话练习区（汉字＋拼音标注＋声调提示，含"跟读"语音按钮与实时发音评分），底部为实时更新的纠错日志面板（语法纠错、发音评分、生词自动入卡），右上角为"开始 / 暂停对话"控制组，并可一键切换「拼音 / 汉字 / 英译」显示层级。使用 Ant Design 组件规范、清新国风配色、4px 圆角，并导出可编辑设计稿 + React 代码。
 
-  const updateParam = (
-    key: keyof SimulationParams,
-    value: number,
-  ) => {
-    setParams((current) => ({
-      ...current,
-      [key]: value,
-    }));
-  };
+---
+class: text-sm
+---
 
-  return (
-            3D Simulation Space
-                      className={
-              isPlaying
-                ? 'text-emerald-400'
-                : 'text-slate-400'
-            }
-          >
-            {isPlaying
-              ? 'Status: Solving Navier–Stokes...'
-              : 'Status: Idle'}
-          
-            Three.js / WebGPU Viewport
-          
+# 中文 AI 原型工具：三条路线，怎么选？
 
+| 你的身份 / 目标 | 首选 | 理由 |
+|---|---|---|
+| **产品经理**：需求未定稿，先要能评审的东西 | 墨刀 AI Agent、摹客 3 / 小摹 AI | 中文需求理解好，PRD → 可点击原型，公测期免费 |
+| **设计师**：要能继续精修的专业稿 | Ardot、MasterGo AI、Pixso AI | 可编辑矢量稿 + 组件库/设计系统 + 团队协作 |
+| **开发者**：要能跑起来的前端代码 | Ardot MCP、GemDesign MCP、Pixso D2C | MCP 直连 IDE，按项目技术栈生成 React / Vue 代码 |
+| **企业 / 涉密项目**：数据不能出厂 | Pixso 私有化、MasterGo 企业版、CodeArts 生态 | 支持私有化 / 纯离线内网、权限与审计 |
 
-          Control Panel
-        
-        
-          Density: {params.density.toFixed(2)}
-        
+- **总结**：**生成能力看国产（中文语境 + 本土组件库），代码质量看 MCP 打通程度，长期可用性看平台合规与私有化能力。**
+- **共同注意点**：AI 出的是「草稿级资产」——生成后必须走查边框场景、自适应与异常状态，业务规则仍由人拍板。
 
-                  type="range"
-          min="0.1"
-          max="5"
-          step="0.1"
-          value={params.density}
-          onChange={(event) =>
-            updateParam(
-              'density',
-              Number.parseFloat(event.target.value),
-            )
-          }
-          className="mb-4 w-full"
-        />
+---
 
-        
-          Viscosity: {params.viscosity.toFixed(3)}
-        
+# 以汉语学习 Agent 为例理解用户体验设计
 
-                  type="range"
-          min="0"
-          max="1"
-          step="0.001"
-          value={params.viscosity}
-          onChange={(event) =>
-            updateParam(
-              'viscosity',
-              Number.parseFloat(event.target.value),
-            )
-          }
-          className="mb-6 w-full"
-        />
+## 什么是用户体验设计？
 
-                  type="button"
-          onClick={() => setIsPlaying((current) => !current)}
-          className={`w-full rounded py-2 font-semibold text-white ${
-            isPlaying
-              ? 'bg-rose-600 hover:bg-rose-500'
-              : 'bg-emerald-600 hover:bg-emerald-500'
-          }`}
-        >
-          {isPlaying
-            ? 'Pause Simulation'
-            : 'Run Simulation'}
-  );
-};
-```
+**用户体验设计（UX Design）**：以用户为中心，让产品有用、易用，并带来良好的使用感受。
+
+以“帮助初学者练习汉语的教育 Agent”为例：
+
+- **有用**：围绕点餐、问路等真实场景，提升中文交流能力
+- **易用**：支持文字或语音交流，按需提供拼音和翻译
+- **友好**：使用适合学生水平的表达，纠错时给予鼓励
+- **可控**：学生可以调整难度、请求提示或随时结束练习
+
+**UX 不只是界面好看，更关注学生能否轻松开始、持续练习、真正学会。**
+
+---
+
+# 如何设计汉语学习 Agent 的体验？
+
+1. **了解用户**：汉语水平如何？学习目标是什么？有哪些困难？
+2. **明确任务**：例如“能用汉语点一杯饮料”，而不是笼统地“提高汉语”
+3. **设计流程**：选择场景 → 示范表达 → 对话练习 → 反馈与复习
+4. **提供帮助**：听不懂时可重复、放慢语速或显示拼音
+5. **建立信任**：语音识别不确定时先确认；录音与保存前说明用途并征求同意
+
+**设计重点：减少操作负担，让学生把注意力放在学习上。**
+
+---
+
+# 示例：练习用汉语点餐
+## 点餐对话
+
+Agent：“你好！你想喝什么？”
+
+学生：“我想一个茶。”
+
+Agent：“我明白了！点饮料时可以说：‘我想要一杯茶。’你试着说一次？”
+
+学生：“我想要一杯茶。”
+
+Agent：“很好！你想喝热茶还是冰茶？”
+
+## 如何验证体验是否有效？
+
+- **学习效果**：能否不看提示，独立完成类似对话？
+- **使用体验**：是否容易找到提示、理解反馈？
+- **学习感受**：是否敢于开口，愿意继续练习？
+
+**根据学生的表现与反馈持续改进，而不只关注聊天时长。**
+
 ---
 
 # 第2天第1部分设计作品原型实践：用户故事地图与技术方案调研
 ### Practice: User Story Mapping & Tech Stack Investigation
 本周各组要将前期的软件定义转化为具体的研发路线，并完成原型设计。
 
-#### 第2天汇报要求：
 
-1. **用户故事清单 (docs/requirements/user_stories.md)**：
-   * 至少编写 5 个符合 INVEST 规范的用户故事。
-   * 每个故事需配有详细的 验收条件 (Acceptance Criteria)。
-
-2. **原型展示**：提交利用 AI (如 v0.dev / Figma) 生成的交互式原型页面，上台 Demo 交互流程。
-
-3. **技术方案调研报告 (docs/architecture/tech_stack.md)**：
-   * 论证核心技术选型。例如：为什么选用 WebAssembly 还是 C++ 原生运行？
-   * 列出团队在未来 2 周内需要学习的新技术（制定自学计划与 Milestone）。
 
 
 * **检查点**：教师将严格评估**原型的可行性**以及**技术选型的科学性**，确认后方可进入系统开发（第四阶段）。
 
+
 ---
 
-# 参考案例 用户故事地图
+# MVP：最小可用产品
 
+**用最少的功能，让用户完成核心任务，并验证产品是否有价值。**
+
+以 Helpdesk AI 为例：
+
+- 用户提问，AI 回答常见问题
+- 无法解决时，用户可以创建工单
+- 用户评分，团队收集反馈
+
+**先验证“能否解决问题”，再增加投诉分级、数据看板等功能。**
+
+---
+
+
+# 案例：一个云服务平台用户故事地图
+按业务流程（横轴）与商业价值分批（纵轴）绘制。
 
 ![用户故事地图](https://raw.githubusercontent.com/bettermorn/IntelligentSWEPractice/main/courseware/pages/imgs/UserStoryMap.png)
 
 
 
 ---
+layout: two-cols
+---
+
+# 案例：客服智能体用户故事地图
+
+::left::
+
+```mermaid{scale:0.35}
+flowchart TB
+
+classDef epic fill:#CECBF6,stroke:#534AB7,color:#26215C,font-weight:bold;
+classDef mvp fill:#9FE1CB,stroke:#0F6E56,color:#04342C;
+classDef r2 fill:#B5D4F4,stroke:#185FA5,color:#042C53;
+classDef r3 fill:#F5C4B3,stroke:#993C1D,color:#4A1B0C;
+
+subgraph Backbone["业务流程（用户旅程主干）"]
+    direction LR
+    E1(["① 发起会话"]):::epic
+    --> E2(["② 提出诉求"]):::epic
+    --> E3(["③ 获得响应"]):::epic
+    --> E4(["④ 工单跟踪"]):::epic
+    --> E5(["⑤ 反馈评价"]):::epic
+end
+
+subgraph R1["Release 1 · 核心闭环（必须价值）"]
+    direction LR
+    S1_1["创建会话<br/>填写 session_id / user_id"]:::mvp
+    S2_1["描述问题<br/>自动识别意图"]:::mvp
+    S3_1["知识库命中<br/>返回带引用的答案"]:::mvp
+    S4_1["自动创建工单<br/>返回工单号 / 状态"]:::mvp
+    S5_1["星级评分 + 评论<br/>提交反馈"]:::mvp
+end
+
+subgraph R2plus["Release 2 · 体验与覆盖面（重要价值）"]
+    direction LR
+    S2_2["多轮记忆<br/>无需重复背景信息"]:::r2
+    S3_2["知识库未命中<br/>降级提示并转人工"]:::r2
+    S3_3["识别投诉情绪<br/>安抚式回应"]:::r2
+    S4_2["同会话补充信息<br/>更新已有工单"]:::r2
+end
+
+subgraph R3plus["Release 3 · 效率与易用性（增值）"]
+    direction LR
+    S1_2["快捷问题<br/>一键发起提问"]:::r3
+    S5_2["响应式布局<br/>移动端随时评价"]:::r3
+end
+
+E1 --> S1_1
+E2 --> S2_1
+E3 --> S3_1
+E4 --> S4_1
+E5 --> S5_1
+
+S2_1 --> S2_2
+S3_1 --> S3_2 --> S3_3
+S4_1 --> S4_2
+S1_1 --> S1_2
+S5_1 --> S5_2
+```
+
+::right::
+
+
+## 说明
+
+- **业务流程主干**：发起会话 → 提出诉求 → 获得响应 → 工单跟踪 → 反馈评价，对应 README 中 `/chat`、`/feedback` 接口及会话管理能力。
+- **Release 1（核心闭环，必须价值）**：创建会话、意图识别、知识库命中答案、自动建单、提交评分，构成最小可用闭环。
+- **Release 2（体验与覆盖面，重要价值）**：多轮记忆、知识库未命中降级、投诉情绪识别、工单追加更新。
+- **Release 3（效率与易用性，增值）**：快捷提问、移动端响应式布局。
+  
+---
+
+
+
+
 
 # 第2天智能软件工程学习目标
 
@@ -279,7 +364,7 @@ layout: two-cols
 - 工程问题转为"如何可靠地使用AI"
 
 
-💡 对具体项目：既在用 AI 辅助开发（第3周已用AI工具做原型），又在考虑把 AI 算法模型作为作品功能（第6周技术方案）——这正是两者的结合
+💡 对具体项目：既在用 AI 辅助开发（已用AI工具做原型），又在考虑把 AI 算法模型作为作品功能——这正是两者的结合
 
 
 ---
@@ -334,27 +419,54 @@ class: text-sm
 
 # 中文主流 AI 编码工具一览
 
+> 根据公共信息核实　时间：2026-10-14
 
-| 工具 | 定位 | 典型能力 |
+| 工具（最新名称） | 定位 | 典型能力 |
 |---|---|---|
-| **通义灵码（Tongyi Lingma）** | IDE 插件 / 行内补全 | 代码补全、单元测试生成、代码解释，支持主流 IDE（阿里云） |
-| **CodeGeeX** | 开源代码大模型 | 多语言代码生成/补全，支持 VS Code、IntelliJ 插件（智谱 & 清华） |
-| **文心快码（Baidu Comate）** | AI 编程助手 | 智能补全、代码生成、单测生成、代码解释（百度文心大模型） |
-| **DeepSeek Coder / DeepSeek-V3** | 开源代码大模型 | 代码生成、补全、调试，性能对标国际主流模型（DeepSeek） |
-| **MarsCode** | AI 编程助手 | 代码补全、Bug 修复、代码解释，集成于 IDE（字节跳动） |
-| **CodeFuse** | 企业级代码大模型 | 代码生成、代码评审、知识库问答，开源生态（蚂蚁集团） |
-| **腾讯云 AI 代码助手** | IDE 插件 | 代码补全、代码解释、注释生成，集成腾讯云开发环境（腾讯） |
-| **讯飞星火代码助手** | 编程辅助工具 | 代码生成、解释、调试建议，基于星火大模型（科大讯飞） |
-| **Kimi（Moonshot AI）** | 通用对话/长文本 | 代码解释、长上下文代码分析、文档生成（月之暗面） |
+| **Qoder CN（原通义灵码）**&#8203; | 阿里云 AI 编程智能体系列 | 补全 + Ask/Edit/Agent 三模式；Quest 2.0 规划、Subagent、MCP；多模型切换 |
+| **CodeGeeX（智谱 Z.ai）**&#8203; | 开源代码大模型 + IDE 插件 | CodeGeeX4-ALL-9B（128K、支持 Function Call）；多语言补全、代码库问答；可内网私有化 |
+| **文心快码（Baidu Comate）**&#8203; | 插件 + AI IDE（已并入「百度搭子」） | 超级补全、多智能体协同、SPEC 规范驱动；Figma 转前端代码；知识增强 RAG |
+| **DeepSeek-V4（Pro / Flash）**&#8203; | 开源旗舰大模型（编程底座） | 1M 上下文；V4-Pro 为开源最佳 Agentic Coding；V4-Flash 快而省；开放权重可自部署 |
+| **TRAE（原 MarsCode，字节跳动）**&#8203; | AI Development 平台（IDE / 插件 / CLI） | Agent 与 IDE 模式无缝切换；SOLO 端到端开发、设计稿转代码、多模态编程 |
+
 
 ---
+class: text-sm
+---
 
-#  中文主流 AI 编码工具补充说明
+# 中文主流 AI 编码工具一览（续）
+> 根据公共信息核实　时间：2026-10-14
 
-- **通义灵码**、**文心快码**、**MarsCode** 等属于国内大厂推出的“行内补全类”工具，功能上与 GitHub Copilot 类似，且深度适配国内开发者常用工具链（如飞书、钉钉集成、Gitee 等）。
-- **CodeGeeX**、**DeepSeek Coder** 属于**开源代码大模型**，可自部署或通过 API 调用，在国际评测榜（如 HumanEval、MBPP）中表现优异，是中国开源社区的重要贡献。
-- **CodeFuse** 更偏向企业级场景，强调代码知识库检索和内部研发效能提升。
-- 大多具备**中文语境优化**优势，例如更好理解中文注释、中文需求描述转代码等，在本土化开发场景中体验更佳。
+| 工具（最新名称） | 定位 | 典型能力 |
+|---|---|---|
+| **CodeFuse（蚂蚁集团）**&#8203; | 企业级代码大模型 + 开源生态 | 补全 / 解释 / 单测 / 优化补丁；CodeFuse-Query 静态分析；金融级安全沙箱与脱敏 |
+| **CodeBuddy（腾讯云代码助手）**&#8203; | 插件 + IDE + CLI 三端全覆盖 | 补全、单测、评审；Craft/Agent 智能体、MCP、Figma2Code、一键部署；混元 + DeepSeek 双轮 |
+| **iFlyCode（科大讯飞）**&#8203; | 智能编程助手（SaaS / 私有化） | 生成、续写、纠错、解释、单测、调试、SQL、代码评审；70+ 语言、信创适配 |
+| **Kimi Code（月之暗面）**&#8203; | 开源模型 + 编程工具（终端 / IDE） | K2.6 开源，可连续编码 13 小时、Agent Swarm 并行；截图 / 录屏生成前端代码 |
+| **华为 CodeArts Snap** | 信创 / 鸿蒙 AI 编程助手（盘古） | 生成、问答、单测、解释、调试等八大场景；ArkTS/鸿蒙原生适配；纯离线内网 |
+
+
+---
+class: text-sm
+---
+
+# 中文主流 AI 编码工具补充说明
+> 根据公共信息核实　时间：2026-10-14
+
+**格局：由「三类」演化为「三层」**
+- ① **一体化 Agent / AI IDE 平台**（主战场）：CodeBuddy、TRAE、Qoder CN、文心快码、CodeArts Snap
+- ② **IDE 插件 / 行内补全**（类 Copilot）：iFlyCode、CodeFuse、CodeGeeX
+- ③ **开源模型底座**（可自部署 / API）：DeepSeek-V4、GLM-5、Kimi K2.6、CodeGeeX4
+
+**2026 三条主线**
+- **Agent 化**：补全 → 多文件改写 → 全流程自主执行（Plan / Subagent / Skills / MCP·ACP 成标配）
+- **平台收编**：文心快码→百度搭子、TRAE→豆包、通义灵码→Qoder CN、CodeBuddy 与 WorkBuddy 同账号同积分
+- **开源追平闭源**：DeepSeek-V4-Pro 开源 Agentic Coding 最佳、GLM-5 SWE-bench Verified 77.8%、Kimi K2.6 比肩 GPT-5.4 / Opus 4.6
+
+**三个记忆点**
+- **CodeBuddy**：国产少见的**插件 / IDE / CLI 三端全覆盖**，已演进为「设计→编码→后端→部署」全流程 Agent 平台；与 WorkBuddy 同账号同积分（CodeBuddy 编码、WorkBuddy 办公）
+- **CodeFuse**：偏企业级与金融，重代码知识库检索、静态分析与私有化，亦为开源主力贡献者
+- **本土差异**：中文注释 / 需求转代码体验更佳 + 信创适配、等保三级、国密加密、私有化 / 纯离线内网
 
 ---
 layout: two-cols
@@ -624,18 +736,79 @@ layout: two-cols
 - 参考[技术参考](https://github.com/bettermorn/IntelligentSWEPractice/wiki/%E6%8A%80%E6%9C%AF%E5%8F%82%E8%80%83), 确认技术方案（语言、平台、框架、架构图；数据分析技术、人工智能算法模型、区块链、虚拟现实技术等）
 - 规划新技术学习
 
-📋 检查：确认软件作品原型设计
+📋 检查：确认技术设计方案
 
 ---
 
 # 第2天第2部分技术设计学习目标
-
+- AI Agent技术选型需要思考的问题
+- 理解如何设计AI Agent
 - 理解为什么需要 DDD —— 解决"业务与代码脱节"问题
 - 掌握**战略设计**：限界上下文、通用语言、上下文映射
 - 掌握**战术设计**：实体、值对象、聚合、领域服务、仓储
 - 能够为自己的项目画出限界上下文图
 - 能够将一个业务场景转化为领域模型代码
-- 理解如何设计AI Agent
+
+---
+
+# AI Agent技术选型需要思考的问题1-2
+
+## 1. 编排框架（Orchestration Framework）
+- 为什么选用 LangGraph，而不是 LangChain Agent / CrewAI / AutoGen？
+- 是否需要支持多 Agent 协作？单 Agent 场景是否也需要图式编排？
+- 是否需要显式的状态机（State Machine）来管理复杂的多步骤任务？
+- 框架是否支持人工介入（Human-in-the-loop）和中断恢复（Checkpoint/Resume）？
+- 框架的可观测性（Tracing/Debug）能力如何，是否便于排查问题？
+
+## 2. 大模型选型（LLM Provider）
+- 为什么选用 Claude / GPT / 国产模型（如Qwen千问、DeepSeek）？
+- 是否需要支持多模型切换（Model Router）以平衡成本与效果？
+- 模型的上下文窗口长度是否满足业务需求？
+- 是否需要本地部署/私有化模型以满足数据合规要求？
+- 模型的 Function Calling / Tool Use 能力是否成熟稳定？
+---
+
+# AI Agent技术选型需要思考的问题3-4
+
+## 3. 记忆与上下文管理（Memory）
+- 短期记忆（对话上下文）与长期记忆（用户画像、历史知识）如何分离存储？
+- 为什么选用向量数据库（如 Milvus / Pinecone / Weaviate）而不是传统 KV 存储？
+- 是否需要摘要压缩（Summarization）来控制上下文长度？
+- 记忆的更新/遗忘机制如何设计（防止信息过期或污染）？
+
+## 4. 工具调用与集成（Tool / Function Calling）
+- 工具接口是否遵循统一的 Schema 标准（如 OpenAPI / MCP）？
+- 为什么选用 MCP（Model Context Protocol）而不是自定义工具协议？
+- 工具调用失败时的重试与降级策略是什么？
+- 是否需要工具调用的权限隔离与审计日志？
+  
+---
+
+# AI Agent技术选型需要思考的问题5-6
+## 5. 检索增强（RAG）
+- 为什么选用某种向量检索方案而不是纯关键词检索（BM25）？
+- 是否需要混合检索（Hybrid Search：向量 + 关键词）？
+- 文档切分（Chunking）策略如何选择（固定长度 vs 语义切分）？
+- 检索结果的重排序（Rerank）是否必要？
+
+## 6. 部署与运行时（Deployment / Runtime）
+- Agent 是同步阻塞执行还是异步/流式（Streaming）执行？
+- 是否需要容器化部署（Docker/K8s）以支持弹性扩缩容？
+- 单实例 vs 多实例并发下，Agent 的状态如何持久化共享？
+- 是否需要本地沙箱（Sandbox）隔离代码执行类工具的风险？
+
+---
+
+# AI Agent技术选型需要思考的问题7-8
+## 7. 成本与性能（Cost / Performance）
+- 预估的 Token 消耗量和调用频次是多少？是否在预算范围内？
+- 是否需要缓存（Prompt Caching / 结果缓存）来降低成本？
+- 延迟要求（P95/P99）是多少，所选方案能否满足？
+
+## 8. 安全与合规（Security / Compliance）
+- Agent 是否有权限访问敏感数据/执行高风险操作？如何做权限边界控制？
+- 是否需要输出内容审核（Content Moderation）？
+- 用户数据是否需要本地化存储以满足合规要求？
 
 ---
 layout: two-cols
