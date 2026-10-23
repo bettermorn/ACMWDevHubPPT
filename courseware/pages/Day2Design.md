@@ -79,43 +79,6 @@ Continuous Delivery| Deploy[自动部署与监控]
 * **研究热点**：基于 Agent 的软件工程自治、静态代码分析大模型、代码大模型对齐（RLHF for coding）。
 * **核心生产力**：不仅是 Copilot 自动补全，更是在架构生成、单元测试生成方面的突破。
 
----
-layout: two-cols
----
-# 编写高质量的用户故事
-### Writing INVEST User Stories
-用户故事是敏捷开发中描述功能需求的核心工具。
-**标准模板：**
-> 作为一名 `[角色]`，
-> 我想要 `[某种功能]`，
-> 以便能够 `[实现某种价值]`。
-
-#### INVEST 原则：
-* **I**ndependent（独立的）
-* **N**egotiable（可协商的）
-* **V**aluable（有价值的）
-* **E**stimable（可估算的）
-* **S**mall（小巧的）
-* **T**estable（可测试的）
-::right::
-
-#### 用户故事与验收标准实例：
-
-```yaml
-用户故事:
-  角色: 作为一名结构工程师
-  功能: 我想要一键导入 STEP 格式的文件
-  价值: 从而避免手动转换格式造成的精度损失。
-
-验收标准 (Acceptance Criteria - Gherkin 语法):
-  场景: 导入一个有效的 STEP 模型
-    Given 用户在主界面并点击了"导入"按钮
-    When 用户选择了一个标准的 50MB "engine.step" 文件
-    Then 系统应在 5.0 秒内完成解析并无损渲染
-    And 系统状态栏应显示 "导入成功，包含 1420 个面"
-```
-
-参考案例：[客服智能体用户故事与验收标准](https://github.com/bettermorn/AIAgent/blob/main/docs/CSAgent_UserStory_AcceptanceCriteria.md)
 
 ---
 class: text-sm
@@ -250,7 +213,42 @@ Agent：“很好！你想喝热茶还是冰茶？”
 **先验证“能否解决问题”，再增加投诉分级、数据看板等功能。**
 
 ---
+layout: two-cols
+---
+# 编写高质量的用户故事
+### Writing INVEST User Stories
+用户故事是敏捷开发中描述功能需求的核心工具。
+**标准模板：**
+> 作为一名 `[角色]`，
+> 我想要 `[某种功能]`，
+> 以便能够 `[实现某种价值]`。
 
+#### INVEST 原则：
+* **I**ndependent（独立的）
+* **N**egotiable（可协商的）
+* **V**aluable（有价值的）
+* **E**stimable（可估算的）
+* **S**mall（小巧的）
+* **T**estable（可测试的）
+::right::
+
+#### 用户故事与验收标准实例：
+
+```yaml
+用户故事:
+  角色: 作为一名结构工程师
+  功能: 我想要一键导入 STEP 格式的文件
+  价值: 从而避免手动转换格式造成的精度损失。
+
+验收标准 (Acceptance Criteria - Gherkin 语法):
+  场景: 导入一个有效的 STEP 模型
+    Given 用户在主界面并点击了"导入"按钮
+    When 用户选择了一个标准的 50MB "engine.step" 文件
+    Then 系统应在 5.0 秒内完成解析并无损渲染
+    And 系统状态栏应显示 "导入成功，包含 1420 个面"
+```
+
+参考案例：[客服智能体用户故事与验收标准](https://github.com/bettermorn/AIAgent/blob/main/docs/CSAgent_UserStory_AcceptanceCriteria.md)
 
 # 案例：一个云服务平台用户故事地图
 按业务流程（横轴）与商业价值分批（纵轴）绘制。
@@ -331,9 +329,6 @@ S5_1 --> S5_2
 - **Release 3（效率与易用性，增值）**：快捷提问、移动端响应式布局。
   
 ---
-
-
-
 
 
 # 第2天智能软件工程学习目标
