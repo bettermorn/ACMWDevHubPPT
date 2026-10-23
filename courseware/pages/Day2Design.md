@@ -33,8 +33,8 @@ layout: two-cols
 
 # 第2天第1部分设计作品原型：理论
 
-- 智能软件工程的实践
 - 什么是智能软件工程 (Smart Software Engineering / AI4SE)？
+- 智能软件工程的实践
 - 大语言模型 (LLM) 在需求、代码生成与重构中的应用
 - 如何编写符合 INVEST 原则的用户故事 (User Stories)
 - **实践指南**：利用 AI 辅助设计构建高保真原型
@@ -49,6 +49,16 @@ layout: two-cols
 
 📋 检查：确认软件作品原型设计(docs/software/prototype)
 
+---
+
+# 第2天智能软件工程学习目标
+
+- 理解 AI 对软件工程全生命周期的渗透：哪些环节被"加速"，哪些被"重塑"
+- 区分 **AI 辅助开发** 与 **AI 原生软件** 两个不同命题
+- 掌握目前主流的 AI 编码工具及其能力边界
+- 认知 AI 带来的新问题：代码安全、版权、幻觉、对工程师能力的影响
+- 能够评估：目前要从事的项目中，AI 可以应用到哪些环节
+  
 ---
 
 # 智能软件工程 (Smart Software Engineering)
@@ -79,265 +89,6 @@ Continuous Delivery| Deploy[自动部署与监控]
 * **研究热点**：基于 Agent 的软件工程自治、静态代码分析大模型、代码大模型对齐（RLHF for coding）。
 * **核心生产力**：不仅是 Copilot 自动补全，更是在架构生成、单元测试生成方面的突破。
 
-
----
-class: text-sm
----
-
-# AI 辅助原型设计：从自然语言到交互式代码
-### AI-Assisted Prototyping
-
-在进行大规模开发前，利用 AI 生成工具快速完成**高保真交互原型 (Interactive Prototype)**，能够极大降低需求偏离的风险。
-
-* **工具推荐**：
-  * **v0.dev / Bolt.new** (前端 UI 的自然语言生成)
-  * **Figma AI** (组件化交互设计)
-  * **Uizard** (手绘草图转换为高保真 UI)
-
-
-给 AI 的 Prompt 示例：
-
-"Generate a responsive Tailwind React dashboard for a Scientific Simulation Control System. It should contain an interactive 3D canvas placeholder (using Three.js icons), a left sidebar showing the simulation parameters (density, gravity, step size), a bottom panel showing a live-updated charting log for error rates, and a clear run/pause control cluster."为一个科学仿真控制系统生成一个响应式的 Tailwind React 仪表盘。该仪表盘应包含一个交互式 3D 画布占位符（使用 Three.js 图标）、一个显示仿真参数（密度、重力、步长）的左侧边栏、一个显示实时更新的误差率图表日志的底部面板，以及一个清晰的运行/暂停控制组件。
-
----
-class: text-sm
----
-
-# AI 辅助原型设计：从自然语言到交互式代码
-### AI-Assisted Prototyping（中文工具版）
-> 大规模开发前，用 AI 快速产出**高保真交互原型**，把需求偏离的风险提前暴露
-
-**工具推荐**
-- **一体化 AI 设计平台（国产主力）**：腾讯 **Ardot**、**MasterGo AI**（蓝湖）、**摹客 3 / 小摹 AI**、**即时设计 · 即时 AI**、**Pixso AI**
-- **需求 / 原型驱动（偏产品经理）**：**墨刀 AI Agent 2.0**（PRD 文档 → 可点击原型）、**UXbot**（流程画布 + 一次生成整套应用）
-- **设计稿转代码（D2C / MCP）**：**Ardot MCP**（直连 WorkBuddy / CodeBuddy / Cursor 一键还原代码）、**GemDesign MCP**、**Pixso 研发模式**（HTML / 鸿蒙 ArkUI / SwiftUI / Flutter）
-- **海外对照（需稳定国际网络）**：v0.dev、Bolt.new、Figma Make、Uizard
-- **注意**：**Motiff 妙多**已于 2026-07-31 停服，历史文件需在 2026-11-01 前导出
-
-**给 AI 的 Prompt 示例（中文，可直接粘贴）**
-
-> 为「汉语学习 Agent（AI 中文助教）」生成一个响应式的 React 学习工作台：左侧为学习档案侧边栏（HSK 等级、已学词量、待复习队列），中间为对话练习区（汉字＋拼音标注＋声调提示，含"跟读"语音按钮与实时发音评分），底部为实时更新的纠错日志面板（语法纠错、发音评分、生词自动入卡），右上角为"开始 / 暂停对话"控制组，并可一键切换「拼音 / 汉字 / 英译」显示层级。使用 Ant Design 组件规范、清新国风配色、4px 圆角，并导出可编辑设计稿 + React 代码。
-
----
-class: text-sm
----
-
-# 中文 AI 原型工具：三条路线，怎么选？
-
-| 你的身份 / 目标 | 首选 | 理由 |
-|---|---|---|
-| **产品经理**：需求未定稿，先要能评审的东西 | 墨刀 AI Agent、摹客 3 / 小摹 AI | 中文需求理解好，PRD → 可点击原型，公测期免费 |
-| **设计师**：要能继续精修的专业稿 | Ardot、MasterGo AI、Pixso AI | 可编辑矢量稿 + 组件库/设计系统 + 团队协作 |
-| **开发者**：要能跑起来的前端代码 | Ardot MCP、GemDesign MCP、Pixso D2C | MCP 直连 IDE，按项目技术栈生成 React / Vue 代码 |
-| **企业 / 涉密项目**：数据不能出厂 | Pixso 私有化、MasterGo 企业版、CodeArts 生态 | 支持私有化 / 纯离线内网、权限与审计 |
-
-- **总结**：**生成能力看国产（中文语境 + 本土组件库），代码质量看 MCP 打通程度，长期可用性看平台合规与私有化能力。**
-- **共同注意点**：AI 出的是「草稿级资产」——生成后必须走查边框场景、自适应与异常状态，业务规则仍由人拍板。
-
----
-
-# 以汉语学习 Agent 为例理解用户体验设计
-
-## 什么是用户体验设计？
-
-**用户体验设计（UX Design）**：以用户为中心，让产品有用、易用，并带来良好的使用感受。
-
-以“帮助初学者练习汉语的教育 Agent”为例：
-
-- **有用**：围绕点餐、问路等真实场景，提升中文交流能力
-- **易用**：支持文字或语音交流，按需提供拼音和翻译
-- **友好**：使用适合学生水平的表达，纠错时给予鼓励
-- **可控**：学生可以调整难度、请求提示或随时结束练习
-
-**UX 不只是界面好看，更关注学生能否轻松开始、持续练习、真正学会。**
-
----
-
-# 如何设计汉语学习 Agent 的体验？
-
-1. **了解用户**：汉语水平如何？学习目标是什么？有哪些困难？
-2. **明确任务**：例如“能用汉语点一杯饮料”，而不是笼统地“提高汉语”
-3. **设计流程**：选择场景 → 示范表达 → 对话练习 → 反馈与复习
-4. **提供帮助**：听不懂时可重复、放慢语速或显示拼音
-5. **建立信任**：语音识别不确定时先确认；录音与保存前说明用途并征求同意
-
-**设计重点：减少操作负担，让学生把注意力放在学习上。**
-
----
-
-# 示例：练习用汉语点餐
-## 点餐对话
-
-Agent：“你好！你想喝什么？”
-
-学生：“我想一个茶。”
-
-Agent：“我明白了！点饮料时可以说：‘我想要一杯茶。’你试着说一次？”
-
-学生：“我想要一杯茶。”
-
-Agent：“很好！你想喝热茶还是冰茶？”
-
-## 如何验证体验是否有效？
-
-- **学习效果**：能否不看提示，独立完成类似对话？
-- **使用体验**：是否容易找到提示、理解反馈？
-- **学习感受**：是否敢于开口，愿意继续练习？
-
-**根据学生的表现与反馈持续改进，而不只关注聊天时长。**
-
----
-
-# 第2天第1部分设计作品原型实践：用户故事地图与技术方案调研
-### Practice: User Story Mapping & Tech Stack Investigation
-本周各组要将前期的软件定义转化为具体的研发路线，并完成原型设计。
-
-
-
-
-* **检查点**：教师将严格评估**原型的可行性**以及**技术选型的科学性**，确认后方可进入系统开发（第四阶段）。
-
-
----
-
-# MVP：最小可用产品
-
-**用最少的功能，让用户完成核心任务，并验证产品是否有价值。**
-
-以 Helpdesk AI 为例：
-
-- 用户提问，AI 回答常见问题
-- 无法解决时，用户可以创建工单
-- 用户评分，团队收集反馈
-
-**先验证“能否解决问题”，再增加投诉分级、数据看板等功能。**
-
----
-layout: two-cols
----
-# 编写高质量的用户故事
-### Writing INVEST User Stories
-用户故事是敏捷开发中描述功能需求的核心工具。
-**标准模板：**
-> 作为一名 `[角色]`，
-> 我想要 `[某种功能]`，
-> 以便能够 `[实现某种价值]`。
-
-#### INVEST 原则：
-* **I**ndependent（独立的）
-* **N**egotiable（可协商的）
-* **V**aluable（有价值的）
-* **E**stimable（可估算的）
-* **S**mall（小巧的）
-* **T**estable（可测试的）
-::right::
-
-#### 用户故事与验收标准实例：
-
-```yaml
-用户故事:
-  角色: 作为一名结构工程师
-  功能: 我想要一键导入 STEP 格式的文件
-  价值: 从而避免手动转换格式造成的精度损失。
-
-验收标准 (Acceptance Criteria - Gherkin 语法):
-  场景: 导入一个有效的 STEP 模型
-    Given 用户在主界面并点击了"导入"按钮
-    When 用户选择了一个标准的 50MB "engine.step" 文件
-    Then 系统应在 5.0 秒内完成解析并无损渲染
-    And 系统状态栏应显示 "导入成功，包含 1420 个面"
-```
-
-参考案例：[客服智能体用户故事与验收标准](https://github.com/bettermorn/AIAgent/blob/main/docs/CSAgent_UserStory_AcceptanceCriteria.md)
-
-# 案例：一个云服务平台用户故事地图
-按业务流程（横轴）与商业价值分批（纵轴）绘制。
-
-![用户故事地图](https://raw.githubusercontent.com/bettermorn/IntelligentSWEPractice/main/courseware/pages/imgs/UserStoryMap.png)
-
-
-
----
-layout: two-cols
----
-
-# 案例：客服智能体用户故事地图
-
-::left::
-
-```mermaid{scale:0.35}
-flowchart TB
-
-classDef epic fill:#CECBF6,stroke:#534AB7,color:#26215C,font-weight:bold;
-classDef mvp fill:#9FE1CB,stroke:#0F6E56,color:#04342C;
-classDef r2 fill:#B5D4F4,stroke:#185FA5,color:#042C53;
-classDef r3 fill:#F5C4B3,stroke:#993C1D,color:#4A1B0C;
-
-subgraph Backbone["业务流程（用户旅程主干）"]
-    direction LR
-    E1(["① 发起会话"]):::epic
-    --> E2(["② 提出诉求"]):::epic
-    --> E3(["③ 获得响应"]):::epic
-    --> E4(["④ 工单跟踪"]):::epic
-    --> E5(["⑤ 反馈评价"]):::epic
-end
-
-subgraph R1["Release 1 · 核心闭环（必须价值）"]
-    direction LR
-    S1_1["创建会话<br/>填写 session_id / user_id"]:::mvp
-    S2_1["描述问题<br/>自动识别意图"]:::mvp
-    S3_1["知识库命中<br/>返回带引用的答案"]:::mvp
-    S4_1["自动创建工单<br/>返回工单号 / 状态"]:::mvp
-    S5_1["星级评分 + 评论<br/>提交反馈"]:::mvp
-end
-
-subgraph R2plus["Release 2 · 体验与覆盖面（重要价值）"]
-    direction LR
-    S2_2["多轮记忆<br/>无需重复背景信息"]:::r2
-    S3_2["知识库未命中<br/>降级提示并转人工"]:::r2
-    S3_3["识别投诉情绪<br/>安抚式回应"]:::r2
-    S4_2["同会话补充信息<br/>更新已有工单"]:::r2
-end
-
-subgraph R3plus["Release 3 · 效率与易用性（增值）"]
-    direction LR
-    S1_2["快捷问题<br/>一键发起提问"]:::r3
-    S5_2["响应式布局<br/>移动端随时评价"]:::r3
-end
-
-E1 --> S1_1
-E2 --> S2_1
-E3 --> S3_1
-E4 --> S4_1
-E5 --> S5_1
-
-S2_1 --> S2_2
-S3_1 --> S3_2 --> S3_3
-S4_1 --> S4_2
-S1_1 --> S1_2
-S5_1 --> S5_2
-```
-
-::right::
-
-
-## 说明
-
-- **业务流程主干**：发起会话 → 提出诉求 → 获得响应 → 工单跟踪 → 反馈评价，对应 README 中 `/chat`、`/feedback` 接口及会话管理能力。
-- **Release 1（核心闭环，必须价值）**：创建会话、意图识别、知识库命中答案、自动建单、提交评分，构成最小可用闭环。
-- **Release 2（体验与覆盖面，重要价值）**：多轮记忆、知识库未命中降级、投诉情绪识别、工单追加更新。
-- **Release 3（效率与易用性，增值）**：快捷提问、移动端响应式布局。
-  
----
-
-
-# 第2天智能软件工程学习目标
-
-- 理解 AI 对软件工程全生命周期的渗透：哪些环节被"加速"，哪些被"重塑"
-- 区分 **AI 辅助开发** 与 **AI 原生软件** 两个不同命题
-- 掌握目前主流的 AI 编码工具及其能力边界
-- 认知 AI 带来的新问题：代码安全、版权、幻觉、对工程师能力的影响
-- 能够评估：目前要从事的项目中，AI 可以应用到哪些环节
 
 ---
 layout: two-cols
@@ -556,6 +307,285 @@ layout: two-cols
 - 哪些工作只能人来判断（业务决策、架构取舍）
 - 如何在作品中体现"人机协作"而非"AI 替代人"
 
+
+---
+class: text-sm
+---
+
+# AI 辅助原型设计：从自然语言到交互式代码
+### AI-Assisted Prototyping
+
+在进行大规模开发前，利用 AI 生成工具快速完成**高保真交互原型 (Interactive Prototype)**，能够极大降低需求偏离的风险。
+
+* **工具推荐**：
+  * **v0.dev / Bolt.new** (前端 UI 的自然语言生成)
+  * **Figma AI** (组件化交互设计)
+  * **Uizard** (手绘草图转换为高保真 UI)
+
+
+给 AI 的 Prompt 示例：
+
+"Generate a responsive Tailwind React dashboard for a Scientific Simulation Control System. It should contain an interactive 3D canvas placeholder (using Three.js icons), a left sidebar showing the simulation parameters (density, gravity, step size), a bottom panel showing a live-updated charting log for error rates, and a clear run/pause control cluster."为一个科学仿真控制系统生成一个响应式的 Tailwind React 仪表盘。该仪表盘应包含一个交互式 3D 画布占位符（使用 Three.js 图标）、一个显示仿真参数（密度、重力、步长）的左侧边栏、一个显示实时更新的误差率图表日志的底部面板，以及一个清晰的运行/暂停控制组件。
+
+---
+class: text-sm
+---
+
+# AI 辅助原型设计：从自然语言到交互式代码
+### AI-Assisted Prototyping（中文工具版）
+> 大规模开发前，用 AI 快速产出**高保真交互原型**，把需求偏离的风险提前暴露
+
+**工具推荐**
+- **一体化 AI 设计平台（国产主力）**：腾讯 **Ardot**、**MasterGo AI**（蓝湖）、**摹客 3 / 小摹 AI**、**即时设计 · 即时 AI**、**Pixso AI**
+- **需求 / 原型驱动（偏产品经理）**：**墨刀 AI Agent 2.0**（PRD 文档 → 可点击原型）、**UXbot**（流程画布 + 一次生成整套应用）
+- **设计稿转代码（D2C / MCP）**：**Ardot MCP**（直连 WorkBuddy / CodeBuddy / Cursor 一键还原代码）、**GemDesign MCP**、**Pixso 研发模式**（HTML / 鸿蒙 ArkUI / SwiftUI / Flutter）
+- **海外对照（需稳定国际网络）**：v0.dev、Bolt.new、Figma Make、Uizard
+- **注意**：**Motiff 妙多**已于 2026-07-31 停服，历史文件需在 2026-11-01 前导出
+
+**给 AI 的 Prompt 示例（中文，可直接粘贴）**
+
+> 为「汉语学习 Agent（AI 中文助教）」生成一个响应式的 React 学习工作台：左侧为学习档案侧边栏（HSK 等级、已学词量、待复习队列），中间为对话练习区（汉字＋拼音标注＋声调提示，含"跟读"语音按钮与实时发音评分），底部为实时更新的纠错日志面板（语法纠错、发音评分、生词自动入卡），右上角为"开始 / 暂停对话"控制组，并可一键切换「拼音 / 汉字 / 英译」显示层级。使用 Ant Design 组件规范、清新国风配色、4px 圆角，并导出可编辑设计稿 + React 代码。
+
+---
+class: text-sm
+---
+
+# 中文 AI 原型工具：三条路线，怎么选？
+
+| 你的身份 / 目标 | 首选 | 理由 |
+|---|---|---|
+| **产品经理**：需求未定稿，先要能评审的东西 | 墨刀 AI Agent、摹客 3 / 小摹 AI | 中文需求理解好，PRD → 可点击原型，公测期免费 |
+| **设计师**：要能继续精修的专业稿 | Ardot、MasterGo AI、Pixso AI | 可编辑矢量稿 + 组件库/设计系统 + 团队协作 |
+| **开发者**：要能跑起来的前端代码 | Ardot MCP、GemDesign MCP、Pixso D2C | MCP 直连 IDE，按项目技术栈生成 React / Vue 代码 |
+| **企业 / 涉密项目**：数据不能出厂 | Pixso 私有化、MasterGo 企业版、CodeArts 生态 | 支持私有化 / 纯离线内网、权限与审计 |
+
+- **总结**：**生成能力看国产（中文语境 + 本土组件库），代码质量看 MCP 打通程度，长期可用性看平台合规与私有化能力。**
+- **共同注意点**：AI 出的是「草稿级资产」——生成后必须走查边框场景、自适应与异常状态，业务规则仍由人拍板。
+
+---
+
+# 以汉语学习 Agent 为例理解用户体验设计
+
+## 什么是用户体验设计？
+
+**用户体验设计（UX Design）**：以用户为中心，让产品有用、易用，并带来良好的使用感受。
+
+以“帮助初学者练习汉语的教育 Agent”为例：
+
+- **有用**：围绕点餐、问路等真实场景，提升中文交流能力
+- **易用**：支持文字或语音交流，按需提供拼音和翻译
+- **友好**：使用适合学生水平的表达，纠错时给予鼓励
+- **可控**：学生可以调整难度、请求提示或随时结束练习
+
+**UX 不只是界面好看，更关注学生能否轻松开始、持续练习、真正学会。**
+
+---
+
+# 如何设计汉语学习 Agent 的体验？
+
+1. **了解用户**：汉语水平如何？学习目标是什么？有哪些困难？
+2. **明确任务**：例如“能用汉语点一杯饮料”，而不是笼统地“提高汉语”
+3. **设计流程**：选择场景 → 示范表达 → 对话练习 → 反馈与复习
+4. **提供帮助**：听不懂时可重复、放慢语速或显示拼音
+5. **建立信任**：语音识别不确定时先确认；录音与保存前说明用途并征求同意
+
+**设计重点：减少操作负担，让学生把注意力放在学习上。**
+
+---
+
+# 示例：练习用汉语点餐
+## 点餐对话
+
+Agent：“你好！你想喝什么？”
+
+学生：“我想一个茶。”
+
+Agent：“我明白了！点饮料时可以说：‘我想要一杯茶。’你试着说一次？”
+
+学生：“我想要一杯茶。”
+
+Agent：“很好！你想喝热茶还是冰茶？”
+
+## 如何验证体验是否有效？
+
+- **学习效果**：能否不看提示，独立完成类似对话？
+- **使用体验**：是否容易找到提示、理解反馈？
+- **学习感受**：是否敢于开口，愿意继续练习？
+
+**根据学生的表现与反馈持续改进，而不只关注聊天时长。**
+
+---
+
+# 第2天第1部分设计作品原型实践：用户故事地图与技术方案调研
+### Practice: User Story Mapping & Tech Stack Investigation
+本周各组要将前期的软件定义转化为具体的研发路线，并完成原型设计。
+
+
+* **检查点**：教师将评估**原型的可行性**。
+
+
+---
+
+# MVP：最小可用产品
+
+**用最少的功能，让用户完成核心任务，并验证产品是否有价值。**
+
+以 Helpdesk AI 为例：
+
+- 用户提问，AI 回答常见问题
+- 无法解决时，用户可以创建工单
+- 用户评分，团队收集反馈
+
+**先验证“能否解决问题”，再增加投诉分级、数据看板等功能。**
+
+---
+layout: two-cols
+---
+# 编写高质量的用户故事
+### Writing INVEST User Stories
+用户故事是敏捷开发中描述功能需求的核心工具。
+**标准模板：**
+> 作为一名 `[角色]`，
+> 我想要 `[某种功能]`，
+> 以便能够 `[实现某种价值]`。
+
+#### INVEST 原则：
+* **I**ndependent（独立的）
+* **N**egotiable（可协商的）
+* **V**aluable（有价值的）
+* **E**stimable（可估算的）
+* **S**mall（小巧的）
+* **T**estable（可测试的）
+::right::
+
+#### 用户故事与验收标准实例：
+
+```yaml
+用户故事:
+  角色: 作为一名结构工程师
+  功能: 我想要一键导入 STEP 格式的文件
+  价值: 从而避免手动转换格式造成的精度损失。
+
+验收标准 (Acceptance Criteria - Gherkin 语法):
+  场景: 导入一个有效的 STEP 模型
+    Given 用户在主界面并点击了"导入"按钮
+    When 用户选择了一个标准的 50MB "engine.step" 文件
+    Then 系统应在 5.0 秒内完成解析并无损渲染
+    And 系统状态栏应显示 "导入成功，包含 1420 个面"
+```
+
+参考案例：[客服智能体用户故事与验收标准](https://github.com/bettermorn/AIAgent/blob/main/docs/CSAgent_UserStory_AcceptanceCriteria.md)
+
+# 案例：一个云服务平台用户故事地图
+按业务流程（横轴）与商业价值分批（纵轴）绘制。
+
+![用户故事地图](https://raw.githubusercontent.com/bettermorn/IntelligentSWEPractice/main/courseware/pages/imgs/UserStoryMap.png)
+
+
+
+---
+layout: two-cols
+---
+
+# 案例：客服智能体用户故事地图
+
+::left::
+
+```mermaid{scale:0.35}
+flowchart TB
+
+classDef epic fill:#CECBF6,stroke:#534AB7,color:#26215C,font-weight:bold;
+classDef mvp fill:#9FE1CB,stroke:#0F6E56,color:#04342C;
+classDef r2 fill:#B5D4F4,stroke:#185FA5,color:#042C53;
+classDef r3 fill:#F5C4B3,stroke:#993C1D,color:#4A1B0C;
+
+subgraph Backbone["业务流程（用户旅程主干）"]
+    direction LR
+    E1(["① 发起会话"]):::epic
+    --> E2(["② 提出诉求"]):::epic
+    --> E3(["③ 获得响应"]):::epic
+    --> E4(["④ 工单跟踪"]):::epic
+    --> E5(["⑤ 反馈评价"]):::epic
+end
+
+subgraph R1["Release 1 · 核心闭环（必须价值）"]
+    direction LR
+    S1_1["创建会话<br/>填写 session_id / user_id"]:::mvp
+    S2_1["描述问题<br/>自动识别意图"]:::mvp
+    S3_1["知识库命中<br/>返回带引用的答案"]:::mvp
+    S4_1["自动创建工单<br/>返回工单号 / 状态"]:::mvp
+    S5_1["星级评分 + 评论<br/>提交反馈"]:::mvp
+end
+
+subgraph R2plus["Release 2 · 体验与覆盖面（重要价值）"]
+    direction LR
+    S2_2["多轮记忆<br/>无需重复背景信息"]:::r2
+    S3_2["知识库未命中<br/>降级提示并转人工"]:::r2
+    S3_3["识别投诉情绪<br/>安抚式回应"]:::r2
+    S4_2["同会话补充信息<br/>更新已有工单"]:::r2
+end
+
+subgraph R3plus["Release 3 · 效率与易用性（增值）"]
+    direction LR
+    S1_2["快捷问题<br/>一键发起提问"]:::r3
+    S5_2["响应式布局<br/>移动端随时评价"]:::r3
+end
+
+E1 --> S1_1
+E2 --> S2_1
+E3 --> S3_1
+E4 --> S4_1
+E5 --> S5_1
+
+S2_1 --> S2_2
+S3_1 --> S3_2 --> S3_3
+S4_1 --> S4_2
+S1_1 --> S1_2
+S5_1 --> S5_2
+```
+
+::right::
+
+
+## 说明
+
+- **业务流程主干**：发起会话 → 提出诉求 → 获得响应 → 工单跟踪 → 反馈评价，对应 README 中 `/chat`、`/feedback` 接口及会话管理能力。
+- **Release 1（核心闭环，必须价值）**：创建会话、意图识别、知识库命中答案、自动建单、提交评分，构成最小可用闭环。
+- **Release 2（体验与覆盖面，重要价值）**：多轮记忆、知识库未命中降级、投诉情绪识别、工单追加更新。
+- **Release 3（效率与易用性，增值）**：快捷提问、移动端响应式布局。
+  
+
+
+
+---
+layout: two-cols
+---
+
+# 第2天第2部分技术设计：理论
+- 领域驱动设计方法 Domain-Driven Design (DDD)
+- AI Agent,参考 [AI Agent参考资源](https://github.com/bettermorn/AIAgent/) 自行研究
+
+::right::
+
+# 第2天第2部分技术设计：实践
+
+- 参考[技术参考](https://github.com/bettermorn/IntelligentSWEPractice/wiki/%E6%8A%80%E6%9C%AF%E5%8F%82%E8%80%83), 确认技术方案（语言、平台、框架、架构图；数据分析技术、人工智能算法模型、区块链、虚拟现实技术等）
+- 规划新技术学习
+
+📋 检查：确认技术设计方案
+
+---
+
+# 第2天第2部分技术设计学习目标
+- 理解 AI 工程
+- AI Agent技术选型需要思考的问题
+- 理解如何设计AI Agent
+- 理解为什么需要 DDD —— 解决"业务与代码脱节"问题
+- 掌握**战略设计**：限界上下文、通用语言、上下文映射
+- 掌握**战术设计**：实体、值对象、聚合、领域服务、仓储
+- 能够为自己的项目画出限界上下文图
+- 能够将一个业务场景转化为领域模型代码
+
 ---
 class: text-sm
 ---
@@ -714,37 +744,6 @@ flowchart LR
 
 应用软件是“可使用的业务工具”，  AI Agent是“能够理解目标并协调多个工具完成任务的智能执行层”。参考[AI Agent](https://github.com/bettermorn/AIAgent/)
 
-
-
----
-layout: two-cols
----
-
-# 第2天第2部分技术设计：理论
-- 领域驱动设计方法 Domain-Driven Design (DDD)
-- AI Agent,参考 [AI Agent参考资源](https://github.com/bettermorn/AIAgent/) 自行研究
-
-::right::
-
-# 第2天第2部分技术设计：实践
-
-- 参考[技术参考](https://github.com/bettermorn/IntelligentSWEPractice/wiki/%E6%8A%80%E6%9C%AF%E5%8F%82%E8%80%83), 确认技术方案（语言、平台、框架、架构图；数据分析技术、人工智能算法模型、区块链、虚拟现实技术等）
-- 规划新技术学习
-
-📋 检查：确认技术设计方案
-
----
-
-# 第2天第2部分技术设计学习目标
-- AI Agent技术选型需要思考的问题
-- 理解如何设计AI Agent
-- 理解为什么需要 DDD —— 解决"业务与代码脱节"问题
-- 掌握**战略设计**：限界上下文、通用语言、上下文映射
-- 掌握**战术设计**：实体、值对象、聚合、领域服务、仓储
-- 能够为自己的项目画出限界上下文图
-- 能够将一个业务场景转化为领域模型代码
-
----
 
 # AI Agent技术选型需要思考的问题1-2
 
