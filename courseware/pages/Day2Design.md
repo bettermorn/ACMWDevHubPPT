@@ -751,6 +751,7 @@ flowchart LR
 
 应用软件是“可使用的业务工具”，  AI Agent是“能够理解目标并协调多个工具完成任务的智能执行层”。参考[AI Agent](https://github.com/bettermorn/AIAgent/)
 
+---
 
 # AI Agent技术选型需要思考的问题1-2
 
