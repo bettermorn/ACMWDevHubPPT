@@ -423,7 +423,7 @@ Agent：“很好！你想喝热茶还是冰茶？”
 
 ---
 
-# 第2天第1部分设计作品原型实践：用户故事地图与技术方案调研
+# 第2天第2部分设计作品原型实践：用户故事地图与技术方案调研
 ### Practice: User Story Mapping & Tech Stack Investigation
 本周各组要将前期的软件定义转化为具体的研发路线，并完成原型设计。
 
@@ -1188,7 +1188,7 @@ public class OrderAppService {
 layout: two-cols
 ---
 
-# 第2天第2部分技术设计实践任务
+# 第2天第3部分技术设计实践任务
 
 ::left::
 
