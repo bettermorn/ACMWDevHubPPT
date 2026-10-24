@@ -64,7 +64,7 @@
 
     
 ---
-class: text-sm
+class: text-xs
 ---
 
 # 课程开展方式
@@ -79,7 +79,7 @@ class: text-sm
 - DeepSeek开发者平台 https://platform.deepseek.com/
 ## 作品完成要求
 - 作品应用多种信息技术([技术参考](https://github.com/bettermorn/IntelligentSWEPractice/wiki/%E6%8A%80%E6%9C%AF%E5%8F%82%E8%80%83)),可以是各种形态，如Web应用、手机App、腾讯小程序、Client客户端软件等等。
-- 作品需要满足软件行业标准。
+- 作品需要满足软件行业标准。参考国标[信息安全技术 网络安全等级保护基本要求](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=BAFB47E8874764186BDB7865E8344DAF) [等保三级_软件设计开发部署要求.md](https://github.com/bettermorn/IntelligentSWEPractice/blob/main/docs/%E7%AD%89%E4%BF%9D%E4%B8%89%E7%BA%A7_%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%BC%80%E5%8F%91%E9%83%A8%E7%BD%B2%E8%A6%81%E6%B1%82.md)
 
 
 ---
