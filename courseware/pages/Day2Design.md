@@ -25,7 +25,7 @@ background: '#1e5f3a'
 
 3. **技术方案调研报告 (docs/software/architecture.md)**：
    * 论证核心技术选型。
-   * 列出团队在未来 2 周内需要学习的新技术（制定自学计划与 Milestone）。
+   * 列出团队在未来 1 周内需要学习的新技术（制定自学计划与 Milestone）。
 
 
 ---
