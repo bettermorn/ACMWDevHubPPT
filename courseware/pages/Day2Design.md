@@ -1218,5 +1218,5 @@ layout: two-cols
 6. 设计安全与合规
 7. 规划新技术学习
 
-🎤 学习成果：系统设计技术方案
+🎤 学习成果：系统设计技术方案 docs/software/architecture.md
 
