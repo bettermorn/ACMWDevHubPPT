@@ -26,6 +26,8 @@ background: '#1e5f3a'
 3. **技术方案调研报告 (docs/software/architecture.md)**：
    * 论证核心技术选型。
    * 列出团队在未来 1 周内需要学习的新技术（制定自学计划与 Milestone）。
+   * [AI Agent技术架构模板]( https://github.com/bettermorn/AIAgent/blob/main/docs/architecture.md)
+[参考案例 健康智能助手技术方案]( https://github.com/bettermorn/AIAgent/blob/main/code/IndustryAgent/HealthAssistant/HealthAssistant-%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88.md)
 
 
 ---
@@ -584,6 +586,8 @@ layout: two-cols
 - 规划新技术学习
 
 📋 检查：确认技术设计方案 docs/software/architecture.md
+ [AI Agent技术架构模板]( https://github.com/bettermorn/AIAgent/blob/main/docs/architecture.md)
+[参考案例 健康智能助手技术方案]( https://github.com/bettermorn/AIAgent/blob/main/code/IndustryAgent/HealthAssistant/HealthAssistant-%E6%8A%80%E6%9C%AF%E6%96%B9%E6%A1%88.md)
 
 ---
 
