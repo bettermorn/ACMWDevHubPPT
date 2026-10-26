@@ -350,6 +350,8 @@ hide: true
 
 原则 · 方法 · 案例（HealthAssistant 健康助手 [HealthAssistant_原型设计方案](https://github.com/bettermorn/AIAgent/blob/main/code/IndustryAgent/HealthAssistant/HealthAssistant_%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88.md)）
 
+视频 [【无声演示】健康助手智能体](https://www.bilibili.com/video/BV1cLh86YEBD)
+
 <div class="pt-8 text-gray-500">
 软件工程实践课 · 技术原型设计
 </div>
@@ -555,6 +557,7 @@ graph LR
 - 用 CRAP 四原则各找一处现有界面的问题
 - 用检查清单对你自己的原型打分（0/1），总分 ≥ 80% 才进入编码
 
+参考视频 [【无声演示】健康助手智能体](https://www.bilibili.com/video/BV1cLh86YEBD)
 详细方案见 [HealthAssistant_原型设计方案.md](https://github.com/bettermorn/AIAgent/blob/main/code/IndustryAgent/HealthAssistant/HealthAssistant_%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88.md)
 
 </div>
