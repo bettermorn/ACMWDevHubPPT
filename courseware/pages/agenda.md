@@ -76,6 +76,7 @@ class: text-xs
 ## 基础设施
 - 云服务器使用：阿里云，学生认证领取代金券，可抵扣云服务器费用。
 - AI token使用：阿里云（百炼），学生代金券可抵扣AI Token费用。[国家超算互联网平台](https://www.scnet.cn/home/internet/index.html)也面向新用户提供免费Token与算力资源，并推出了普惠型算力定价。
+- 阿里云千问AI平台开发者文档 https://platform.qianwenai.com/docs/developer-guides
 - DeepSeek开发者平台 https://platform.deepseek.com/
 ## 作品完成要求
 - 作品应用多种信息技术([技术参考](https://github.com/bettermorn/IntelligentSWEPractice/wiki/%E6%8A%80%E6%9C%AF%E5%8F%82%E8%80%83)),可以是各种形态，如Web应用、手机App、腾讯小程序、Client客户端软件等等。
