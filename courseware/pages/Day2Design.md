@@ -343,19 +343,19 @@ layout: two-cols
 
 # Web 应用智能体原型设计
 
-原则 · 方法 · 案例（HealthAssistant 健康助手）
+原则 · 方法 · 案例（HealthAssistant 健康助手 [HealthAssistant_原型设计方案](https://github.com/bettermorn/AIAgent/blob/main/code/IndustryAgent/HealthAssistant/HealthAssistant_%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88.md)）
 
 <div class="pt-8 text-gray-500">
 软件工程实践课 · 技术原型设计
 </div>
 
 <!--
-本讲 5 页：1 原型是什么；2 界面/视觉/体验三层内容；3 平面设计四原则；4 UX 检查清单；5 案例复盘与课堂练习。
+本部分 5 页：1 原型是什么；2 界面/视觉/体验三层内容；3 平面设计四原则；4 UX 检查清单；5 案例复盘与课堂练习。
 -->
 
 ---
 
-# 1. 原型是什么？为什么智能体更需要它
+# 原型设计 1. 原型是什么？为什么智能体更需要它
 
 <div class="grid grid-cols-2 gap-8">
 <div>
@@ -394,7 +394,7 @@ layout: two-cols
 
 ---
 
-# 2. 原型设计的基本内容：三层模型
+# 原型设计2. 原型设计的基本内容：三层模型
 
 ```mermaid {scale: 0.8}
 graph LR
@@ -436,7 +436,7 @@ graph LR
 
 ---
 
-# 3. 平面设计基本原则：CRAP
+# 原型设计3. 平面设计基本原则：CRAP
 
 <div class="grid grid-cols-2 gap-6 text-sm">
 <div>
@@ -475,7 +475,7 @@ graph LR
 
 ---
 
-# 4. 用户体验检查清单（可直接用于评审）
+# 原型设计4. 用户体验检查清单（可直接用于评审）
 
 <div class="grid grid-cols-2 gap-6 text-sm">
 <div>
@@ -509,7 +509,7 @@ graph LR
 
 ---
 
-# 5. 案例：HealthAssistant 原型复盘
+# 原型设计5. 案例：HealthAssistant 原型复盘
 
 <div class="grid grid-cols-2 gap-6 text-sm">
 <div>
@@ -550,7 +550,7 @@ graph LR
 - 用 CRAP 四原则各找一处现有界面的问题
 - 用检查清单对你自己的原型打分（0/1），总分 ≥ 80% 才进入编码
 
-详细方案见 `HealthAssistant_原型设计方案.md`
+详细方案见 [HealthAssistant_原型设计方案.md](https://github.com/bettermorn/AIAgent/blob/main/code/IndustryAgent/HealthAssistant/HealthAssistant_%E5%8E%9F%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88.md)
 
 </div>
 </div>
