@@ -908,6 +908,42 @@ public String grade(int score) {
 
 
 ---
+
+# VS Code 圈复杂度（Cyclomatic Complexity）检测插件推荐
+
+## 按语言推荐
+
+| 语言 | 推荐方案 | 说明 |
+|---|---|---|
+| TypeScript / JavaScript | **CodeMetrics**（`kisstkondoros.vscode-codemetrics`） | 在函数、类上方用 CodeLens 内联显示复杂度，可点击查看每个分支的贡献，阈值和权重可配置。 |
+| TS / JS（强制门禁） | **ESLint 的 `complexity` 规则** | 超标直接报错，例如 `"complexity": ["error", { "max": 10 }]`。 |
+| Java、Python、C/C++ 等多语言 | **Lizard**（相关 VS Code 封装扩展） | 覆盖语言多，同时给出圈复杂度、行数、参数个数。 |
+| Java / JS / Python | **Cyclomatic Complexity Analyzer**（SakthiVel-16） | 依赖云端后端，需联网。 |
+| 前端项目（JS/TS/Vue/HTML/CSS） | **Code Cyclomatic Complexity**（moshuying） | 在资源管理器里按文件显示，颜色为绿（≤5）、黄（≤10）、红（>10）。 |
+| Go | **Go Cyclo** | 专用于 Go。 |
+| Python | **DoraCodeLens** | 在 Python 函数上显示复杂度。 |
+| Ruby | **Flog** | 专用于 Ruby。 |
+| 团队已用 SonarQube/SonarCloud | **SonarLint** | 提示认知复杂度、嵌套过深等代码异味，与服务端规则一致。 |
+
+---
+
+# VS Code 圈复杂度（Cyclomatic Complexity）检测插件推荐（续）
+
+## 综合建议
+
+- **只想一眼看到数字**：TS/JS 选 CodeMetrics，其他语言选 Lizard。
+- **要在团队里强制执行**：用 ESLint `complexity` 规则，或在 CI 里跑 Lizard，别只靠编辑器插件。
+- **阈值**：单函数一般取 10，宽松一点取 15。超过 20 通常建议拆分。
+
+## 注意事项
+
+- CodeMetrics 官方说明自己是“近似”标准圈复杂度，不同插件对 `&&`、`||`、`switch`、三元表达式的计法不同。因此不同工具的数值不能直接横向比较。
+- 圈复杂度和认知复杂度不是同一指标。SonarLint 偏重后者。
+- 有些扩展依赖联网或更新较慢，安装前请看下载量、最近更新时间和评分。
+
+
+
+---
 layout: two-cols
 ---
 # 常见代码坏味道（Code Smell）
