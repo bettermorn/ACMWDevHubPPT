@@ -287,6 +287,8 @@ layout: two-cols
 - 是否引入不必要的复杂度
 - 是否影响性能和可维护性
 
+可参考[Code Review模板](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/Methodology/CodeReviewTemplate.md)
+
 ::right::
 
 ## Code Review 评审原则
