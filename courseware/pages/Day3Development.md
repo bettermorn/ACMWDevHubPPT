@@ -198,6 +198,9 @@ layout：two-cols
 | Go | gofmt、go vet、golangci-lint |
 | 多语言质量分析 | SonarQube、Semgrep |
 
+参考 [VS Code Python代码质量检查](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/Methodology/VSCodePlugins.md)
+
+
 
 ## 推荐实践
 
