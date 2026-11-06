@@ -910,7 +910,7 @@ public String grade(int score) {
 class: text-xs
 ---
 
-# VS Code 圈复杂度（Cyclomatic Complexity）检测插件
+# VS Code 圈复杂度检测插件
 
 
 | 语言 | 推荐方案 | 说明 |
