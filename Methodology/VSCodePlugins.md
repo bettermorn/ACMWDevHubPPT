@@ -35,12 +35,12 @@
 以下推荐两套配置方案：“现代极速流”（推荐） 和 “传统严谨流”。
 ### 方案 A：现代极速流（Ruff + Pylance）—— 适合 90% 的开发者
 这是目前最推荐的配置，速度极快，体验极佳。
-1.在 VS Code 中安装以下插件：
+1. 在 VS Code 中安装以下插件：
 
 ○Python (Microsoft)
 ○Pylance (Microsoft)
 ○Ruff (Astral Software)
-2.配置自动修复与保存时格式化：
+2. 配置自动修复与保存时格式化：
 打开 VS Code 的 settings.json（快捷键：Ctrl + Shift + P -> 输入 Preferences: Open User Settings (JSON)），添加以下配置：
 
 ```
@@ -64,13 +64,13 @@
 
 ### 方案 B：传统经典流（Black + Pylint + Mypy）
 适合已有老项目，或者对严格度有极高要求的团队。
-1.安装插件：
+1. 安装插件：
 
 ○Python, Pylance
 ○Black Formatter (Microsoft)
 ○Pylint (Microsoft)
 ○Mypy Type Checker (Microsoft)
-2.settings.json 配置：
+2. settings.json 配置：
 
 ```
 {
