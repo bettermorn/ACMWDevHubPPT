@@ -174,9 +174,12 @@ layout：two-cols
 
 ---
 layout：two-cols
+class: text-xs
 ---
 
 # 5 编码规范的作用
+
+::left::
 
 - 降低代码阅读成本
 - 减少常见错误
@@ -187,7 +190,7 @@ layout：two-cols
 ::right::
 
 
-# 编码常用工具
+## 编码常用工具
 
 | 场景 | 常用工具 |
 |---|---|
