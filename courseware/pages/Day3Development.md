@@ -178,9 +178,11 @@ layout：two-cols
 ---
 
 
-# 5 编码规范
+---
+layout: two-cols
+---
 
-::left::
+# 5 编码规范
 
 ## 编码规范的作用
 
