@@ -175,7 +175,6 @@ layout：two-cols
 
 ---
 layout：two-cols
-class: text-xs
 ---
 
 ::left::
@@ -197,7 +196,6 @@ class: text-xs
 - 禁止提交明显的调试代码
 - 统一命名、异常处理和日志规范
 - 将规范写入项目文档
-
 ---
 
 # 编码常用工具
