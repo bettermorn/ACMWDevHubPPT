@@ -860,7 +860,7 @@ def calculate(x: float, y: float,
 | 维度 | 说明 | 常用指标/工具 |
 |---|---|---|
 | **可读性** | 命名、注释、格式是否清晰 | Checkstyle / ESLint |
-| **复杂度** | 逻辑分支是否过多 | 圈复杂度 (Cyclomatic Complexity) |
+| **复杂度** | 逻辑分支是否过多 | 圈复杂度 (Cyclomatic Complexity) /Complexity Lens |
 | **重复度** | 是否存在复制粘贴代码 | SonarQube Duplication |
 | **可测试性** | 是否易于编写单元测试 | 单元测试覆盖率 |
 | **安全性** | 是否存在已知漏洞模式 | SonarQube / Semgrep / Snyk |
@@ -928,7 +928,7 @@ class: text-xs
 | Java / JS / Python | **Cyclomatic Complexity Analyzer**（SakthiVel-16） | 依赖云端后端，需联网。 |
 | 前端项目（JS/TS/Vue/HTML/CSS） | **Code Cyclomatic Complexity**（moshuying） | 在资源管理器里按文件显示，颜色为绿（≤5）、黄（≤10）、红（>10）。 |
 | Go | **Go Cyclo** | 专用于 Go。 |
-| Python | **DoraCodeLens** | 在 Python 函数上显示复杂度。 |
+| Python | **DoraCodeLens**/Complexity Lens | 在 Python 函数上显示复杂度。 |
 | Ruby | **Flog** | 专用于 Ruby。 |
 | 团队已用 SonarQube/SonarCloud | **SonarLint** | 提示认知复杂度、嵌套过深等代码异味，与服务端规则一致。 |
 
