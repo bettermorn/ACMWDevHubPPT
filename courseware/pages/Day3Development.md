@@ -174,11 +174,6 @@ layout：two-cols
 
 
 ---
-layout：two-cols
----
-
-
----
 layout: two-cols
 ---
 
