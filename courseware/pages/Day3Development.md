@@ -177,9 +177,9 @@ layout：two-cols
 layout：two-cols
 ---
 
-::left::
 
 # 5 编码规范的作用
+
 
 - 降低代码阅读成本
 - 减少常见错误
@@ -196,9 +196,11 @@ layout：two-cols
 - 禁止提交明显的调试代码
 - 统一命名、异常处理和日志规范
 - 将规范写入项目文档
+  
 ---
 
 # 编码常用工具
+
 
 | 场景 | 常用工具 |
 |---|---|
@@ -208,7 +210,8 @@ layout：two-cols
 | Go | gofmt、go vet、golangci-lint |
 | 多语言质量分析 | SonarQube、Semgrep |
 
-参考
+
+## 参考
 - [VS Code Python代码质量检查](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/Methodology/VSCodePlugins.md)
 - [汇报内容3.6软件质量](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/courseware/%E5%88%9B%E6%96%B0%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%90%A5%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%8A%A5%E5%86%85%E5%AE%B9.md#36-%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F)
 
