@@ -212,7 +212,7 @@ class: text-xs
 | 多语言质量分析 | SonarQube、Semgrep |
 
 参考 [VS Code Python代码质量检查](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/Methodology/VSCodePlugins.md)
-[汇报内容3.6软件质量](https://github.com/bettermorn/ACMWDevHubPPT/wiki/%E5%88%9B%E6%96%B0%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%90%A5%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%8A%A5%E5%86%85%E5%AE%B9#362-%E8%B4%A8%E9%87%8F%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8)
+[汇报内容3.6软件质量](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/courseware/%E5%88%9B%E6%96%B0%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E8%90%A5%E9%A1%B9%E7%9B%AE%E6%B1%87%E6%8A%A5%E5%86%85%E5%AE%B9.md#36-%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F)
 
 
 ---
