@@ -144,8 +144,6 @@ layout：two-cols
 layout：two-cols
 ---
 
-
-
 # 4 编码关注点
 
 - 模块职责是否清晰
@@ -169,10 +167,6 @@ layout：two-cols
 - 封装变化
 - 避免重复代码
 - 避免过早优化
-
-
-
-
 
 
 ---
