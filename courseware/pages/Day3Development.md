@@ -175,7 +175,7 @@ class: text-sm
 
 
 ---
-layout: two-cols
+layout: two-cols-header
 ---
 
 # 5 编码规范
