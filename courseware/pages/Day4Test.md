@@ -74,6 +74,7 @@ layout: two-cols
 
 ---
 layout: two-cols-header
+class: text-sm
 ---
 
 # 测试金字塔
@@ -298,7 +299,7 @@ public boolean canRenew(Loan loan) {
 
 
 ---
-layout: two-cols
+layout: two-cols-header
 class: text-sm
 ---
 
@@ -328,7 +329,7 @@ class: text-sm
 </div>
 
 ---
-class: text-sm
+class: text-xs
 ---
 
 # 智能体测试2. 分层测试模型：智能体测试金字塔
@@ -392,7 +393,7 @@ class: text-sm
 </div>
 
 ---
-class: text-sm
+class: text-xs
 ---
 
 # 智能体测试4. 用例模板与质量门禁
@@ -781,7 +782,7 @@ class: text-sm
 | H9 | 错误可恢复 | 制造一次出错（如断网）：错误信息是否说明原因和下一步？重试时要不要重新输入？多次失败有没有备选办法？ | 错误可理解、可恢复 | 提示包含"原因 + 下一步"并带重试按钮；重试沿用原问题，已输入内容不丢失；连续失败后给出备选办法（稍后再试、反馈入口）。 |
 
 ---
-class: text-sm
+class: text-xs
 ---
 
 # 智能体专项（A1–A6）
@@ -815,8 +816,15 @@ class: text-sm
 
 # 实践软件产品用户测试方法
 
-完成下表
+
+
+- 完成下表
+
 [智能体Demo 用户测试表](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/courseware/assignment/%E7%94%A8%E6%88%B7%E6%B5%8B%E8%AF%95%E8%A1%A8-%E5%AD%A6%E7%94%9F%E7%89%88.md)
+
+- 参考 [智能体Demo · 用户测试表（教师版）](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/courseware/assignment/%E7%94%A8%E6%88%B7%E6%B5%8B%E8%AF%95%E8%A1%A8-%E6%95%99%E5%B8%88%E7%89%88.md)
+
+
 
 
 
