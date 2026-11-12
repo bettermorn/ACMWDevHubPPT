@@ -224,11 +224,11 @@ layout: two-cols-header
 class: text-xs
 ---
 
-::left::
-
 # 测试用例设计方法 3：判定表 
 
-**案例**：图书借阅系统中，"是否能续借"判定
+::left::
+
+## 案例：图书借阅系统中，"是否能续借"判定
 
 | 规则 | 是否逾期 | 是否欠费 | 续借次数<3 | 是否允许续借 |
 |---|---|---|---|---|
@@ -300,10 +300,14 @@ public boolean canRenew(Loan loan) {
 
 ---
 layout: two-cols-header
-class: text-sm
+class: text-xs
 ---
 
-# 智能体测试1. 智能体测试难在哪里
+# 智能体测试1. 测试难点和基本原则
+
+::left::
+
+## 智能体测试难在哪里
 
 | 维度 | 传统软件 | 智能体 |
 |---|---|---|
@@ -316,17 +320,13 @@ class: text-sm
 
 ::right::
 
-<div class="pl-6">
-
-### 五条基本原则
+## 五条基本原则
 
 1. **按确定性分层**：能写成规则的就别交给模型判断，也别用模型去测
 2. **依赖可替换**：LLM、Embedding、时钟、文件路径都通过注入或 `monkeypatch` 替换为 Fake / Stub / Spy
 3. **断言看行为，不看措辞**：断言「含引用 `[n]`、含免责声明、不含剂量」，而不是断言整段文本
 4. **安全用例宁多勿少**：红旗召回 100%、诊断/处方拒答 100% 作为硬门槛
 5. **每个缺陷沉淀为用例**：线上 bad case → 回归集；已知缺陷先写 `xfail` 用例
-
-</div>
 
 ---
 class: text-xs
@@ -354,11 +354,12 @@ flowchart LR
 
 ---
 layout: two-cols
-class: text-sm
+class: text-xs
 ---
 
 # 智能体测试3. 用例设计技术
 
+::left::
 ### 输入怎么选
 
 - **等价类 + 边界值**：7 位数字串（替换）vs 6 位（保留）
@@ -369,9 +370,6 @@ class: text-sm
 - **故障注入**：LLM 超时、401、空回复、审计目录不可写
 
 ::right::
-
-<div class="pl-6">
-
 ### 结果怎么判
 
 | 断言类型 | 示例 |
@@ -390,17 +388,15 @@ class: text-sm
 - **Fake**：可运行的简化实现（哈希嵌入）
 - **Record/Replay**：录制真实响应，离线回放
 
-</div>
 
 ---
+layout: two-cols
 class: text-xs
 ---
 
 # 智能体测试4. 用例模板与质量门禁
 
-<div class="grid grid-cols-2 gap-6">
-
-<div>
+::left::
 
 ### 标准用例模板
 
@@ -426,9 +422,7 @@ expected:
 status: active | xfail(已知缺陷)
 ```
 
-</div>
-
-<div>
+::right::
 
 ### CI 质量门禁
 
@@ -444,11 +438,6 @@ status: active | xfail(已知缺陷)
 - [ ] `conftest.py` 统一提供 FakeLLM、FakeEmbedder、tmp 审计路径
 - [ ] `pytest -m "not live"` 默认离线；`-m live` 才调真实模型
 - [ ] 已知缺陷以 `xfail(strict=True)` 登记，修复后自动转红提醒
-
-</div>
-
-</div>
-
 
 
 ---
