@@ -353,7 +353,7 @@ flowchart LR
 > 越往下越多、越快、越确定；越往上越少、越贵、越接近真实用户。**L1–L3 必须完全离线、可重复。**
 
 ---
-layout: two-cols
+layout: two-cols-header
 class: text-xs
 ---
 
@@ -390,7 +390,7 @@ class: text-xs
 
 
 ---
-layout: two-cols
+layout: two-cols-header
 class: text-xs
 ---
 
