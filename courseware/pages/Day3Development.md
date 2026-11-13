@@ -27,7 +27,7 @@ layout: two-cols
 # 第3天第1部分软件开发方法：实践
 
 - 用各种技术和工具开发系统功能
-  
+
 
 
 🛠️ 检查：为学生提供开发指导
@@ -787,7 +787,9 @@ layout: two-cols
 
 # 第3天第2部分软件代码质量：实践
 - 使用软件代码质量工具检查代码质量，并修改代码
-- 代码评审 docs/software/CodeReview.md 
+- 检查代码质量（提交扫描报告截图 + 重构前后对比）：提交docs/software/code_quality.md 
+- 评审代码：提交 docs/software/code_review.md
+
 - 🛠️ 检查：代码质量
 
 ---
@@ -1267,4 +1269,6 @@ public class OrderProcessor {
 3. 选出 Top 5 最严重问题，逐一重构（先补测试，再重构）
 4. 重新扫描，对比重构前后指标变化，形成质量报告
 
-✅ 检查：检查代码质量（提交扫描报告截图 + 重构前后对比）
+✅ 检查
+- 检查代码质量（提交扫描报告截图 + 重构前后对比）：提交docs/software/code_quality.md 
+- 评审代码：提交 docs/software/code_review.md
