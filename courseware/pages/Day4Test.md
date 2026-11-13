@@ -26,7 +26,7 @@ layout: two-cols
 
 # 第4天第1部分软件测试：实践
 
-- 编写软件作品的测试用例 docs/tests/unit, docs/tests/integration
+- 编写软件作品的测试用例 tests/unit, tests/integration
 
 📋 检查 确认测试用例
 
@@ -638,7 +638,7 @@ layout: two-cols-header
 3. 用**场景法**为一条关键业务流程编写端到端测试
 4. 统计覆盖率，确保核心逻辑 ≥ 60%
 
-📋 检查：确认测试用例（提交测试用例文档 + 测试代码），提交到 docs/tests/unit, docs/tests/integration 目录下。
+📋 检查：确认测试用例（提交测试用例文档 + 测试代码），提交到 tests/unit, tests/integration 目录下。
 参考 [健康智能助手（HealthAssistant）单元测试与集成测试用例](https://github.com/bettermorn/AIAgent/blob/main/code/IndustryAgent/HealthAssistant/HealthAssistant-%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.md)
 
 ---
@@ -654,7 +654,7 @@ layout: two-cols-header
 - 修改作品缺陷：使用GitHub的Issues/BugTracker Project
 
 
-📋 检查：确认测试用例 docs/tests/unit, docs/tests/integration，使用Issues/BugTracker Project
+📋 检查：确认测试用例 tests/unit, tests/integration，使用Issues/BugTracker Project
 
 
 ---
