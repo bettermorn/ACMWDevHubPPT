@@ -475,7 +475,7 @@ layout: two-cols
 # 第1天第2部分需求规范：实践
 
 - 定义要解决工程问题的软件作品功能
-
+- 完成 docs/requirements/functional_spec.md和docs/requirements/nonfunctional_spec.md
 
 📋 检查：确认软件作品的功能
 
