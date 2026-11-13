@@ -458,7 +458,8 @@ repository-root/
 │   │   └── architecture.md            # 系统架构说明文档
 │   │   └── code_quality.md            # 代码质量
 │   │   └── code_review.md             # 代码评审
-│   │   
+│   │   └── deployment.md              # 系统部署
+│   │  
 │   ├── mgmt/                         # 项目管理（沟通管理、风险管理）
 │   │   ├── communication_mgmt_plan.md # 沟通管理计划
 │   │   └── risk_mgmt_plan.md          # 风险管理计划
