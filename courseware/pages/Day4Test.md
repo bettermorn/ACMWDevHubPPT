@@ -636,7 +636,7 @@ layout: two-cols-header
 1. 为作品功能的**核心逻辑**编写单元测试（JUnit / pytest / Jest）
 2. 用**等价类 + 边界值**为至少一个输入字段设计测试用例
 3. 用**场景法**为一条关键业务流程编写端到端测试
-4. 统计覆盖率，确保核心逻辑 ≥ 60%（第12周还会继续测）
+4. 统计覆盖率，确保核心逻辑 ≥ 60%
 
 📋 检查：确认测试用例（提交测试用例文档 + 测试代码），提交到 docs/tests/unit, docs/tests/integration 目录下。
 参考 [健康智能助手（HealthAssistant）单元测试与集成测试用例](https://github.com/bettermorn/AIAgent/blob/main/code/IndustryAgent/HealthAssistant/HealthAssistant-%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.md)
