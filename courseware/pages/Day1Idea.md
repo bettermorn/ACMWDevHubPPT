@@ -477,9 +477,22 @@ repository-root/
     └── XXXagent_demo_user_test       # 用户测试
 ```
 
+---
 
+# 项目仓库结构（续）
 
-
+```text
+repository-root/
+├── code/                            # 源码
+│   ├── backend/                      # 后端服务（API、业务逻辑、数据访问）
+│   ├── frontend/                     # 前端应用（页面、组件、状态管理）
+│   └── core_engine/                  # 核心引擎（算法实现、公共库、被前后端复用）
+│
+└── tests/                           # 测试
+    ├── unit/                         # 单元测试
+    └── integration/                  # 集成测试
+    └── XXXagent_demo_user_test       # 用户测试
+```
 
 
 ---
