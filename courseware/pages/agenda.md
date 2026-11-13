@@ -95,7 +95,7 @@ class: text-xs
 | 1 | 定义软件产品 | 设计思维、如何完成技术或实践创新；<br>如何定义软件的功能；<br>面向对象分析 | 组建产品团队，定义产品功能；<br>在GitHub建立作品仓库和Team Planning、Kanban、Bug Tracker；<br>制定沟通管理和风险管理计划 |README.md<br>docs/requirements/functional_spec.md<br>docs/requirements/nonfunctional_spec.md<br>docs/mgmt/communication_mgmt_plan.md <br>docs/mgmt/risk_mgmt_plan.md|
 | 2 | 设计软件产品 | 面向对象设计；<br> 功能需求和非功能需求 | 编写用户故事、设计产品原型；<br>确定技术选型 |docs/requirements/user_stories.md<br>docs/software/prototype<br> docs/software/architecture.md|
 | 3 | 开发软件产品 | 软件开发方法；<br> 如何编写卓越的代码 | 使用软件代码质量工具检查代码质量，并修改代码 |docs/software/code_quality.md<br> docs/software/code_review.md|
-| 4 | 测试软件产品 | 软件测试的方法；<br>软件产品原型测试方法 | 撰写测试用例，交叉完成用户测试 |docs/tests/unit<br>docs/tests/integration|
+| 4 | 测试软件产品 | 软件测试的方法；<br>软件产品原型测试方法 | 撰写测试用例，交叉完成用户测试 |docs/tests/unit<br>docs/tests/integration<br>Bug Tracker|
 | 5 | 部署软件产品 | 部署和发布软件的方法及检查单 | 优化和部署产品 |--|
 | 6 | 答辩和总结 | — | 准备答辩材料，作品答辩，课程总结 |docs/report.md|
 
