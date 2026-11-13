@@ -807,9 +807,8 @@ class: text-sm
 
 
 
-- 完成下表
-
-[智能体Demo 用户测试表](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/courseware/assignment/%E7%94%A8%E6%88%B7%E6%B5%8B%E8%AF%95%E8%A1%A8-%E5%AD%A6%E7%94%9F%E7%89%88.md)
+- 完成下表 [智能体Demo 用户测试表](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/courseware/assignment/%E7%94%A8%E6%88%B7%E6%B5%8B%E8%AF%95%E8%A1%A8-%E5%AD%A6%E7%94%9F%E7%89%88.md) tests/XXXagent_demo_user_test.md
+  
 
 - 参考 [智能体Demo · 用户测试表（教师版）](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/courseware/assignment/%E7%94%A8%E6%88%B7%E6%B5%8B%E8%AF%95%E8%A1%A8-%E6%95%99%E5%B8%88%E7%89%88.md)
 
