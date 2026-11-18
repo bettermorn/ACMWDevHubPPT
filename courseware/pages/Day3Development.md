@@ -1268,6 +1268,7 @@ public class OrderProcessor {
 2. 运行扫描，记录当前 Bug 数、Code Smell 数、圈复杂度、重复率
 3. 选出 Top 5 最严重问题，逐一重构（先补测试，再重构）
 4. 重新扫描，对比重构前后指标变化，形成质量报告
+5. 参考 [Code Quality Skill](https://github.com/bettermorn/ACMWDevHubPPT/blob/master/Methodology/CodeQualitySkill.md) [CodeQualitySkill-使用说明.md] (https://github.com/bettermorn/ACMWDevHubPPT/blob/master/Methodology/CodeQualitySkill-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.md)
 
 ✅ 检查
 - 检查代码质量（提交扫描报告截图 + 重构前后对比）：提交docs/software/code_quality.md 
