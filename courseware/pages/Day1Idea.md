@@ -436,46 +436,68 @@ mkdir -p docs/{requirements,algorithm,software,mgmt,retrospection} \
 - **检查点**：第1天结束前，各组提交仓库链接，通过 GitHub Issues 获得第一轮反馈。
 
 ---
-class: text-xs
+class: text-xs repo-slide
 ---
 
 # 项目仓库结构
 
-```text{scale: 0.7}
+```text
 repository-root/
-├── docs/                           # 项目文档
-│   ├── requirements/                # 需求文档（需求规格、用户故事、验收标准）
-│   │   ├── problem_definition.md      # 问题定义（背景、痛点、目标、范围边界）
-│   │   ├── functional_spec.md         # 功能需求规格说明
-│   │   ├── nonfunctional_spec.md      # 非功能需求规格说明（性能、安全、可用性等）
-│   │   └── user_stories.md            # 用户故事与验收标准
-│   │
-│   ├── algorithm/                   # 算法说明（公式推导、复杂度分析、参数说明）
-│   │   └── research.md                # 技术调研（候选方案对比、论文/资料整理、选型依据）
-│   │
-│   ├── software/                    # 软件设计（架构图、接口文档、模块设计）
-│   │   ├── prototype/                 # 原型设计（线框图、交互原型、UI/UX 草稿）
-│   │   └── architecture.md            # 系统架构说明文档
-│   │   └── code_quality.md            # 代码质量
-│   │   └── code_review.md             # 代码评审
-│   │   └── deployment.md              # 系统部署
-│   │  
-│   ├── mgmt/                         # 项目管理（沟通管理、风险管理）
-│   │   ├── communication_mgmt_plan.md # 沟通管理计划
-│   │   └── risk_mgmt_plan.md          # 风险管理计划
-│   │
-│   └── retrospection/                # 复盘总结（迭代回顾、事故复盘、经验沉淀）
-│
-├── code/                            # 源码
-│   ├── backend/                      # 后端服务（API、业务逻辑、数据访问）
-│   ├── frontend/                     # 前端应用（页面、组件、状态管理）
-│   └── core_engine/                  # 核心引擎（算法实现、公共库、被前后端复用）
-│
-└── tests/                           # 测试
-    ├── unit/                         # 单元测试
-    └── integration/                  # 集成测试
-    └── XXXagent_demo_user_test       # 用户测试
+├── docs/                                   # 项目文档
+│   ├── requirements/                       # 需求文档（规格、用户故事、验收标准）
+│   │   ├── problem_definition.md           # 问题定义（背景、痛点、目标、范围）
+│   │   ├── functional_spec.md              # 功能需求规格说明
+│   │   ├── nonfunctional_spec.md           # 非功能需求（性能、安全、可用性）
+│   │   └── user_stories.md                 # 用户故事与验收标准
+│   ├── algorithm/                          # 算法说明（推导、复杂度、参数）
+│   │   └── research.md                     # 技术调研与选型依据
+│   ├── software/                           # 软件设计（架构、接口、模块）
+│   │   ├── prototype/                      # 原型设计（线框图、交互稿）
+│   │   ├── architecture.md                 # 系统架构说明
+│   │   ├── code_quality.md                 # 代码质量
+│   │   ├── code_review.md                  # 代码评审
+│   │   └── deployment.md                   # 系统部署
+│   ├── mgmt/                               # 项目管理
+│   │   ├── communication_mgmt_plan.md      # 沟通管理计划
+│   │   └── risk_mgmt_plan.md               # 风险管理计划
+│   └── retrospection/                      # 复盘总结与经验沉淀
+├── code/                                   # 源码
+│   ├── backend/                            # 后端服务（API、业务逻辑、数据访问）
+│   ├── frontend/                           # 前端应用（页面、组件、状态管理）
+│   └── core_engine/                        # 核心引擎（算法实现、公共库）
+└── tests/                                  # 测试
+    ├── unit/                               # 单元测试
+    ├── integration/                        # 集成测试
+    └── XXXagent_demo_user_test             # 用户测试
 ```
+
+<style>
+/* 所有规则都限定在 .repo-slide，只影响本页，不污染其它 slide / 演讲者模式 */
+.repo-slide,
+.repo-slide.slidev-layout,
+.repo-slide .slidev-layout {
+  padding-top: 0.9rem !important;
+  padding-bottom: 0.9rem !important;
+}
+.repo-slide h1 {
+  font-size: 1.05rem !important;
+  line-height: 1.2 !important;
+  margin: 0 0 0.35em !important;
+  padding: 0 !important;
+}
+.repo-slide pre,
+.repo-slide .slidev-code,
+.repo-slide .shiki {
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+  padding: 0.35em 0.6em !important;
+}
+.repo-slide pre code {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+</style>
 
 ---
 
