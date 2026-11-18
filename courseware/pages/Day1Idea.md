@@ -441,7 +441,7 @@ class: text-xs
 
 # 项目仓库结构
 
-```text
+```text{scale: 0.7}
 repository-root/
 ├── docs/                           # 项目文档
 │   ├── requirements/                # 需求文档（需求规格、用户故事、验收标准）
