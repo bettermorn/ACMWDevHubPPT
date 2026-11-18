@@ -436,7 +436,7 @@ mkdir -p docs/{requirements,algorithm,software,mgmt,retrospection} \
 - **检查点**：第1天结束前，各组提交仓库链接，通过 GitHub Issues 获得第一轮反馈。
 
 ---
-class: text-xs repo-slide
+class: repo-slide
 ---
 
 # 项目仓库结构
