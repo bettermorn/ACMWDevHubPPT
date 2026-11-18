@@ -35,6 +35,10 @@ layout: two-cols
 # 第5天第1部分部署作品：实践
 
 - 部署作品
+- 完成docs/software/deployment.md，参考[健康智能助手Linux 云服务器部署指南](https://github.com/bettermorn/AIAgent/blob/main/code/IndustryAgent/HealthAssistant/deployment.md) 和 [海上风电场运维智能体部署指南](https://github.com/bettermorn/AIAgent/tree/main/code/IndustryAgent/WindOnMAgent/deployment.md)
+
+
+---
 
 
 ---
