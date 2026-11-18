@@ -517,7 +517,7 @@ repository-root/
   padding: 0.6em 0.9em !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
-  font-size: 2.55vh !important;
+  font-size: 1.55vh !important;
   line-height: 1.32 !important;
 }
 
