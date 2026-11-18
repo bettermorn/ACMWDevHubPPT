@@ -433,7 +433,7 @@ mkdir -p docs/{requirements,algorithm,software,mgmt,retrospection} \
 ```
 
 - **任务要求**：在 `docs/requirements/problem_definition.md` 中完成 5W1H 报告和产品描述。
-- **检查点**：第一周结束前，各组提交仓库链接，通过 GitHub Issues 获得第一轮反馈。
+- **检查点**：第1天结束前，各组提交仓库链接，通过 GitHub Issues 获得第一轮反馈。
 
 ---
 class: text-xs
@@ -1196,7 +1196,7 @@ class: text-sm
 
 # 第1天第2部分需求规范实践：软件功能规范书撰写
 ### Practice: Functional Specification & UML Domain Modeling
-本周各组必须在协作仓库中提交 `docs/requirements/functional_spec.md`和`docs/requirements/nonfunctional_spec.md`。
+第1天各组必须在协作仓库中提交 `docs/requirements/functional_spec.md`和`docs/requirements/nonfunctional_spec.md`。
 
 ```markdown
 # 软件系统功能规格说明书 (示例模板)
@@ -1216,7 +1216,7 @@ class: text-sm
 [在此处插入 Mermaid 类图]
 ```
 可参考 [多智能体 AI Agent 工业分析平台：软件功能规格说明书](https://github.com/bettermorn/AIAgent/blob/main/docs/AIAgentFunSpec.md)
-- **汇报要求**：第二周课上，每组用 3 分钟展示其领域类图与功能分解，教师确认后方能进入系统原型设计。
+- **汇报要求**：第2天课上，每组用 3 分钟展示其领域类图与功能分解，教师确认后方能进入系统原型设计。
 
 ---
 layout: two-cols
