@@ -472,30 +472,59 @@ repository-root/
 ```
 
 <style>
-/* 所有规则都限定在 .repo-slide，只影响本页，不污染其它 slide / 演讲者模式 */
-.repo-slide,
+/* 所有规则限定在 .repo-slide，只影响本页 */
+
+/* 页面：纵向 flex，标题在上，代码块占满剩余空间 */
 .repo-slide.slidev-layout,
-.repo-slide .slidev-layout {
-  padding-top: 0.9rem !important;
-  padding-bottom: 0.9rem !important;
+.repo-slide {
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 1.2rem 1.8rem 1rem !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
 }
+
+/* 标题：保持 heading 1 的正常观感 */
 .repo-slide h1 {
-  font-size: 1.05rem !important;
-  line-height: 1.2 !important;
-  margin: 0 0 0.35em !important;
+  font-size: 1.8rem !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+  margin: 0 0 0.5rem !important;
   padding: 0 !important;
+  flex: 0 0 auto !important;
 }
+
+/* 代码块容器：填满剩余高度和宽度 */
+.repo-slide .slidev-code-wrapper,
+.repo-slide .slidev-code-wrapper > div,
+.repo-slide pre.slidev-code {
+  flex: 1 1 auto !important;
+  width: 100% !important;
+  min-height: 0 !important;
+}
+.repo-slide .slidev-code-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+}
+
 .repo-slide pre,
 .repo-slide .slidev-code,
 .repo-slide .shiki {
-  font-size: 12px !important;
-  line-height: 1.2 !important;
+  width: 100% !important;
+  height: 100% !important;
   margin: 0 !important;
-  padding: 0.35em 0.6em !important;
+  padding: 0.6em 0.9em !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  font-size: 2.55vh !important;
+  line-height: 1.32 !important;
 }
+
 .repo-slide pre code {
   font-size: inherit !important;
   line-height: inherit !important;
+  display: block !important;
 }
 </style>
 
