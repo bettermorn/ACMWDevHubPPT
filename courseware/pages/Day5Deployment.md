@@ -721,12 +721,15 @@ spec:
 ```
 
 ---
+layout: two-cols-header
 class: text-xs
 ---
 
+::left::
+
 ## Kubernetes Service 示例
 
-```yaml{scale:0.5}
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -740,9 +743,12 @@ spec:
   type: ClusterIP
 ```
 
-发布和检查：
 
-```bash{scale:0.5}
+::right::
+
+## 发布和检查
+
+```bash
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 
@@ -752,9 +758,9 @@ kubectl describe deployment myapp
 kubectl logs deployment/myapp --tail=100
 ```
 
-回滚：
+## 回滚
 
-```bash{scale:0.5}
+```bash
 kubectl rollout history deployment/myapp
 kubectl rollout undo deployment/myapp
 kubectl rollout status deployment/myapp
@@ -906,7 +912,7 @@ layout: two-cols-header
 - 执行健康检查
 - 支持回滚
 
----
+
 ---
 layout: two-cols-header
 ---
@@ -1362,27 +1368,31 @@ P95 延迟 > 1000ms
 3. 日志规范
 
 ---
+layout: two-cols
 class: text-xs
 ---
-
 
 ## 健康检查接口
 
 建议提供：
 
 ```text
-GET /health
+GET /health   # 用于判断进程是否正常运行
+GET /ready    # 用于判断实例是否可以接收流量
 ```
 
-用于判断进程是否正常运行。
+区别：
 
-```text
-GET /ready
-```
+- `health`：进程是否存活
+- `ready`：是否准备好提供服务
+- 数据库不可用时，是否应该影响 `ready`，需要根据架构决定
 
-用于判断实例是否可以接收流量。
+::right::
+
+<div class="mt-12">
 
 示例响应：
+
 ```json
 {
   "status": "ok",
@@ -1393,11 +1403,7 @@ GET /ready
 }
 ```
 
-区别：
-
-- `health`：进程是否存活
-- `ready`：是否准备好提供服务
-- 数据库不可用时，是否应该影响 `ready`，需要根据架构决定
+</div>
 
 ---
 layout: two-cols-header
