@@ -303,7 +303,7 @@ flowchart LR
 ```
 
 ---
-class: text-sm
+class: text-xs
 ---
 
 ## 虚拟机部署步骤
