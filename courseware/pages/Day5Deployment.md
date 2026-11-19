@@ -437,7 +437,7 @@ class: text-xs
 
 ## Node.js Web 应用 Dockerfile
 
-```dockerfile
+```dockerfile{scale: 0.6}
 # 构建阶段
 FROM node:22-alpine AS builder
 
@@ -484,24 +484,19 @@ class: text-xs
 docker build \
   --tag registry.example.com/myapp:20260910-120000 \
   .
-
 # 本地运行
 docker run --rm \
   --name myapp \
   --env-file .env.production \
   -p 3000:3000 \
   registry.example.com/myapp:20260910-120000
-
 # 检查容器
 docker ps
 docker logs -f myapp
-
 # 检查健康状态
 docker inspect --format='{{json .State.Health}}' myapp
 ```
-
 建议：
-
 - 使用不可变版本标签，不要只使用 `latest`
 - 使用多阶段构建减小镜像体积
 - 使用非 root 用户运行
