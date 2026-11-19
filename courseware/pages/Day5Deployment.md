@@ -344,7 +344,7 @@ class: text-xs
 
 ## systemd 服务示例
 
-```ini
+```ini{scale: 0.6}
 # /etc/systemd/system/myapp.service
 [Unit]
 Description=My Web Application
@@ -1050,6 +1050,8 @@ layout: two-cols-header
 
 ## 配置管理原则
 
+::left::
+
 ### 应该配置化的内容
 
 - API 地址
@@ -1062,6 +1064,7 @@ layout: two-cols-header
 - CORS 白名单
 
 ::right::
+
 ### 不应该硬编码的内容
 
 - 生产密码
