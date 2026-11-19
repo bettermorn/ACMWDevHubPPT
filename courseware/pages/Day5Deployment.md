@@ -432,46 +432,52 @@ Docker 可以将应用及其运行环境封装为镜像。
 ```
 
 ---
+layout: two-cols
 class: text-xs
+zoom: 0.9
 ---
 
 ## Node.js Web 应用 Dockerfile
 
-```dockerfile{scale: 0.6}
-# 构建阶段
+<div class="text-sm opacity-70 mb-1">构建阶段</div>
+
+<div style="--slidev-code-font-size: 11px; --slidev-code-line-height: 1.35">
+
+```dockerfile
 FROM node:22-alpine AS builder
-
 WORKDIR /app
-
 COPY package*.json ./
 RUN npm ci
-
 COPY . .
 RUN npm run test
 RUN npm run build
+```
 
-# 运行阶段
+</div>
+
+::right::
+
+<div class="text-sm opacity-70 mt-10 mb-1">运行阶段</div>
+
+<div style="--slidev-code-font-size: 11px; --slidev-code-line-height: 1.35">
+
+```dockerfile
 FROM node:22-alpine AS runner
-
 ENV NODE_ENV=production
 WORKDIR /app
-
 COPY package*.json ./
 RUN npm ci --omit=dev && npm cache clean --force
-
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/server.js ./server.js
-
 USER node
-
 EXPOSE 3000
-
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s \
   CMD wget --no-verbose --tries=1 --spider \
   http://127.0.0.1:3000/health || exit 1
-
 CMD ["node", "server.js"]
 ```
+
+</div>
 
 ---
 class: text-xs
@@ -669,7 +675,7 @@ class: text-sm
 
 ## Kubernetes Deployment 示例
 
-```yaml{scale: 0.3}
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
