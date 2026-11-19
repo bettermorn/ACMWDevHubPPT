@@ -798,9 +798,12 @@ flowchart LR
 
 ---
 layout: two-cols-header
+class: text-sm
 ---
 
 ## 版本命名建议
+
+::left::
 
 ### 推荐使用
 
@@ -881,6 +884,8 @@ layout: two-cols-header
 
 ## CI/CD 基本职责
 
+::left::
+
 ### 持续集成 CI
 
 - 代码格式检查
@@ -891,6 +896,7 @@ layout: two-cols-header
 - 安全扫描
 
 ::right::
+
 ### 持续交付或持续部署 CD
 
 - 部署开发环境
@@ -901,63 +907,62 @@ layout: two-cols-header
 - 支持回滚
 
 ---
+---
+layout: two-cols-header
+---
 
 ## GitHub Actions 示例
 
-```yaml{scale: 0.5}
-name: Web Application CI/CD
+::left::
 
+```yaml
+name: Web Application CI/CD
 on:
   push:
     branches:
       - main
   pull_request:
-
 permissions:
   contents: read
   packages: write
-
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-
       - name: Install dependencies
         run: npm ci
-
       - name: Lint
         run: npm run lint
-
       - name: Unit test
         run: npm run test -- --coverage
-
       - name: Build
         run: npm run build
+```
 
+::right::
+
+```yaml
+jobs:
+  # test 任务见左侧
   build-image:
     needs: test
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Login registry
         uses: docker/login-action@v3
         with:
           registry: registry.example.com
           username: ${{ secrets.REGISTRY_USER }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
-
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
@@ -967,6 +972,13 @@ jobs:
             registry.example.com/myapp:${{ github.sha }}
             registry.example.com/myapp:latest
 ```
+
+<style>
+.slidev-layout {
+  --slidev-code-font-size: 11px;
+  --slidev-code-line-height: 1.35;
+}
+</style>
 
 ---
 layout: two-cols-header
@@ -1132,10 +1144,15 @@ Expand → Migrate → Contract
 5. 最后删除旧字段
 
 ---
+layout: two-cols-header
+---
+
 
 ## 数据库迁移检查
 
-上线前确认：
+::left::
+
+### 上线前确认
 
 - 是否有迁移脚本
 - 是否在测试环境验证过
@@ -1148,7 +1165,10 @@ Expand → Migrate → Contract
 - 是否需要低峰期执行
 - 是否需要人工审批
 
-示例：
+
+::right::
+
+### 示例
 
 ```bash{scale: 0.6}
 # 备份
@@ -1177,7 +1197,9 @@ layout: two-cols-header
 
 ## 1. 停机发布
 
-流程：
+::left::
+
+### 流程
 
 ```text
 停止旧版本 → 部署新版本 → 启动新版本 → 验证
@@ -1190,13 +1212,14 @@ layout: two-cols-header
 - 资源占用较少
   
 ::right::
-缺点：
+
+### 缺点
 
 - 有服务中断
 - 不适合高可用系统
 - 发布失败会影响用户访问
 
-适用：
+### 适用
 
 - 内部系统
 - 低访问量系统
@@ -1237,6 +1260,8 @@ layout: two-cols-header
 
 ## 3. 蓝绿发布
 
+::left::
+
 ### 维护两套环境
 
 ```text
@@ -1253,6 +1278,7 @@ layout: two-cols-header
 5. 发现问题时切回蓝环境
 
 ::right::
+
 ### 优缺点
 优点：
 
@@ -1336,7 +1362,7 @@ P95 延迟 > 1000ms
 3. 日志规范
 
 ---
-class: text-sm
+class: text-xs
 ---
 
 
@@ -1358,7 +1384,7 @@ GET /ready
 
 示例响应：
 
-```json
+```json{scale: 0.4}
 {
   "status": "ok",
   "service": "myapp",
@@ -1380,6 +1406,8 @@ layout: two-cols-header
 
 ## 必备监控指标
 
+::left::
+
 ### 可用性
 
 - HTTP 状态码
@@ -1396,6 +1424,7 @@ layout: two-cols-header
 - 页面加载时间
 
 ::right::
+
 ### 资源
 
 - CPU 使用率
@@ -1414,8 +1443,12 @@ layout: two-cols-header
 - 核心任务成功率
 
 ---
+layout: two-cols-header
+---
 
 ## 日志规范
+
+::left::
 
 ### 日志应包含
 
@@ -1430,6 +1463,7 @@ layout: two-cols-header
 - 关键业务上下文
 
 ::right::
+
 ### 示例
 
 ```json{scale: 0.5}
@@ -1532,6 +1566,8 @@ layout: two-cols-header
 
 ## A. 发布准备检查单
 
+::left::
+
 ### 版本和范围
 
 - [ ] 已确认发布版本号
@@ -1544,6 +1580,7 @@ layout: two-cols-header
 - [ ] 已通知相关团队和客服
       
 ::right::
+
 ### 代码和构建
 
 - [ ] 已通过代码格式检查
@@ -1635,6 +1672,8 @@ class: text-xs
 
 ## F. 发布后验证检查单
 
+::left::
+
 ### 技术验证
 
 - [ ] 首页可以正常访问
@@ -1651,6 +1690,7 @@ class: text-xs
 - [ ] 无明显 404、500 和超时
 
 ::right::
+
 ### 业务验证
 
 - [ ] 用户注册正常
@@ -1859,6 +1899,8 @@ class: text-sm
 
 ## 小型 Web 应用
 
+::left::
+
 ### 推荐
 
 ```text
@@ -1872,7 +1914,9 @@ PaaS / 静态托管 / 单台云服务器
   ↓
 HTTPS + 基础监控
 ```
+
 ::right::
+
 ### 必须具备
 
 - 自动构建
@@ -1889,7 +1933,9 @@ layout: two-cols-header
 
 ## 中型 Web 应用
 
-推荐：
+::left::
+
+### 推荐
 
 ```text
 Git 仓库
@@ -1906,7 +1952,9 @@ CI/CD
   ↓
 日志、监控、告警
 ```
+
 ::right::
+
 ### 重点建设
 
 - 滚动发布
