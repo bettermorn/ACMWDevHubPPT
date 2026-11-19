@@ -80,10 +80,12 @@ layout: two-cols
 10. 必要时回滚
 
 ---
+class: text-sm
+---
 
 ## 典型 Web 应用组成
 
-```mermaid{scale:0.8}
+```mermaid{scale:0.6}
 flowchart LR
     U[用户浏览器] --> DNS[DNS]
     DNS --> CDN[CDN / WAF]
@@ -202,7 +204,6 @@ layout: two-cols
 
 ---
 layout: two-cols
-
 ---
 
 ## Nginx 静态站点配置
@@ -302,6 +303,8 @@ flowchart LR
 ```
 
 ---
+class: text-sm
+---
 
 ## 虚拟机部署步骤
 
@@ -335,6 +338,8 @@ sudo systemctl status myapp
 curl -f http://127.0.0.1:3000/health
 ```
 
+---
+class: text-xs
 ---
 
 ## systemd 服务示例
@@ -435,6 +440,8 @@ Docker 可以将应用及其运行环境封装为镜像。
 ```
 
 ---
+class: text-xs
+---
 
 ## Node.js Web 应用 Dockerfile
 
@@ -475,6 +482,8 @@ CMD ["node", "server.js"]
 ```
 
 ---
+class: text-xs
+---
 
 ## Docker 镜像构建与运行
 
@@ -509,10 +518,12 @@ docker inspect --format='{{json .State.Health}}' myapp
 - 定期扫描基础镜像漏洞
 
 ---
+class: text-xs
+---
 
 ## Docker Compose 示例
 
-```yaml
+```yaml{scale: 0.7}
 services:
   web:
     image: registry.example.com/myapp:${APP_VERSION}
@@ -565,12 +576,15 @@ docker compose logs -f web
 2. Serverless 部署
    
 ---
+layout: two-cols-header
+---
 
 ## PaaS 部署
 
+::left::
 PaaS 将服务器、运行时、部署流程等基础能力平台化。
 
-常见特征：
+### 常见特征
 
 - 连接代码仓库后自动部署
 - 自动构建和发布
@@ -580,14 +594,15 @@ PaaS 将服务器、运行时、部署流程等基础能力平台化。
 - 支持日志和监控
 - 可配置自动扩容
 
-适合：
+::right::
+### 适合
 
 - 快速验证产品
 - 中小型 Web 应用
 - 前端和全栈应用
 - 运维人员较少的团队
 
-注意：
+### 注意
 
 - 检查平台所在区域和网络延迟
 - 评估数据库、对象存储等配套服务
@@ -595,10 +610,12 @@ PaaS 将服务器、运行时、部署流程等基础能力平台化。
 - 提前确认数据迁移和退出方案
 
 ---
+layout: two-cols-header
+---
 
 ## Serverless 部署
-
-Serverless 常用于：
+::left::
+### Serverless 常用于：
 
 - API 接口
 - 定时任务
@@ -607,7 +624,7 @@ Serverless 常用于：
 - 文件上传处理
 - 事件驱动业务
 
-典型流程：
+### 典型流程
 
 ```mermaid{scale:0.6}
 flowchart LR
@@ -617,8 +634,8 @@ flowchart LR
     C --> E[对象存储]
     C --> F[消息队列]
 ```
-
-注意事项：
+::right::
+### 注意事项
 
 - 处理冷启动
 - 控制单次执行时间
@@ -635,6 +652,9 @@ flowchart LR
 1. Kubernetes 适用场景
 2. Kubernetes Deployment 示例
 3. Kubernetes Service 示例
+   
+---
+class: text-sm
 ---
 
 ## Kubernetes 适用场景
@@ -662,7 +682,7 @@ flowchart LR
 
 ## Kubernetes Deployment 示例
 
-```yaml
+```yaml{scale: 0.5}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -714,10 +734,12 @@ spec:
 ```
 
 ---
+class: text-xs
+---
 
 ## Kubernetes Service 示例
 
-```yaml
+```yaml{scale:0.5}
 apiVersion: v1
 kind: Service
 metadata:
@@ -788,10 +810,12 @@ flowchart LR
 - 有发布结果记录
 
 ---
+layout: two-cols-header
+---
 
 ## 版本命名建议
 
-推荐使用：
+### 推荐使用
 
 ```text
 v主版本.次版本.修订版本
@@ -809,7 +833,9 @@ v2.5.1
 - 次版本：新增向后兼容功能
 - 修订版本：问题修复和小幅改动
 
-镜像或构建制品可以使用：
+::right::
+
+### 镜像或构建制品可以使用
 
 ```text
 myapp:v2.5.1
@@ -817,7 +843,7 @@ myapp:git-a1b2c3d
 myapp:20260910-120000
 ```
 
-生产环境应记录：
+### 生产环境应记录
 
 - Git Commit SHA
 - 构建时间
@@ -828,10 +854,13 @@ myapp:20260910-120000
 - 发布批次
 
 ---
+layout: two-cols-header
+---
 
 ## 制品Artifacts管理
 
-构建制品可以是：
+::left::
+### 构建制品可以是
 
 - 前端 `dist.tar.gz`
 - Docker 镜像
@@ -841,7 +870,9 @@ myapp:20260910-120000
 - Kubernetes Manifest
 - Terraform Plan
 
-原则：
+
+::right::
+### 原则
 
 1. 构建一次，多环境复用
 2. 测试和生产使用同一个制品
@@ -856,6 +887,9 @@ myapp:20260910-120000
 1. CI/CD 基本职责
 2. GitHub Actions 示例
 3. CI/CD 安全原则
+   
+---
+layout: two-cols-header
 ---
 
 ## CI/CD 基本职责
@@ -869,6 +903,7 @@ myapp:20260910-120000
 - 构建制品
 - 安全扫描
 
+::right::
 ### 持续交付或持续部署 CD
 
 - 部署开发环境
@@ -882,7 +917,7 @@ myapp:20260910-120000
 
 ## GitHub Actions 示例
 
-```yaml
+```yaml{scale: 0.5}
 name: Web Application CI/CD
 
 on:
@@ -947,10 +982,13 @@ jobs:
 ```
 
 ---
+layout: two-cols-header
+---
 
 ## CI/CD 安全原则
 
-不要将以下内容直接写入仓库：
+::left::
+### 不要将以下内容直接写入仓库
 
 - 数据库密码
 - 云平台 Access Key
@@ -959,7 +997,8 @@ jobs:
 - 第三方 API Secret
 - 生产环境 Token
 
-推荐做法：
+::right::
+### 推荐做法
 
 - 使用 CI/CD Secret
 - 使用云平台 Secret Manager
@@ -970,12 +1009,15 @@ jobs:
 
 ---
 
+
 # 9. 环境与配置管理
 
 1. 环境划分
 2. 配置管理原则
 3. 配置检查命令
 
+---
+class: text-sm
 ---
 
 ## 环境划分
@@ -1003,6 +1045,8 @@ production  生产环境
 - 发布权限
 
 ---
+layout: two-cols-header
+---
 
 ## 配置管理原则
 
@@ -1017,6 +1061,7 @@ production  生产环境
 - 限流参数
 - CORS 白名单
 
+::right::
 ### 不应该硬编码的内容
 
 - 生产密码
@@ -1036,6 +1081,8 @@ LOG_LEVEL=info
 ENABLE_NEW_CHECKOUT=false
 ```
 
+---
+class: text-sm
 ---
 
 ## 配置检查命令
@@ -1113,7 +1160,7 @@ Expand → Migrate → Contract
 
 示例：
 
-```bash
+```bash{scale: 0.6}
 # 备份
 pg_dump "$DATABASE_URL" > backup-before-release.sql
 
@@ -1133,6 +1180,9 @@ npm run db:migrate:status
 3. 蓝绿发布
 4. 灰度发布
 5. 金丝雀发布
+   
+---
+layout: two-cols-header
 ---
 
 ## 1. 停机发布
@@ -1148,7 +1198,8 @@ npm run db:migrate:status
 - 实现简单
 - 适用于小型应用
 - 资源占用较少
-
+  
+::right::
 缺点：
 
 - 有服务中断
@@ -1190,10 +1241,13 @@ flowchart LR
 - 出现异常时立即停止继续发布
 
 ---
+layout: two-cols-header
+---
+
 
 ## 3. 蓝绿发布
 
-维护两套环境：
+### 维护两套环境
 
 ```text
 蓝环境：当前生产版本
@@ -1208,6 +1262,8 @@ flowchart LR
 4. 持续观察
 5. 发现问题时切回蓝环境
 
+::right::
+### 优缺点
 优点：
 
 - 切换和回滚速度快
@@ -1224,7 +1280,7 @@ flowchart LR
 
 ## 4. 灰度发布
 
-逐步扩大新版本流量：
+### 逐步扩大新版本流量
 
 ```text
 内部用户 → 1% 用户 → 5% 用户 → 20% 用户 → 50% 用户 → 100% 用户
@@ -1239,7 +1295,8 @@ flowchart LR
 - 请求 Header
 - 随机比例
 
-灰度期间重点观察：
+::right::
+### 灰度期间重点观察
 
 - HTTP 5xx
 - 请求延迟
@@ -1289,6 +1346,9 @@ P95 延迟 > 1000ms
 3. 日志规范
 
 ---
+class: text-sm
+---
+
 
 ## 健康检查接口
 
@@ -1325,6 +1385,8 @@ GET /ready
 - 数据库不可用时，是否应该影响 `ready`，需要根据架构决定
 
 ---
+layout: two-cols-header
+---
 
 ## 必备监控指标
 
@@ -1343,6 +1405,7 @@ GET /ready
 - 请求大小
 - 页面加载时间
 
+::right::
 ### 资源
 
 - CPU 使用率
@@ -1364,7 +1427,7 @@ GET /ready
 
 ## 日志规范
 
-日志应包含：
+### 日志应包含
 
 - 时间戳
 - 日志级别
@@ -1376,9 +1439,10 @@ GET /ready
 - 错误堆栈
 - 关键业务上下文
 
-示例：
+::right::
+### 示例
 
-```json
+```json{scale: 0.5}
 {
   "level": "error",
   "service": "myapp",
@@ -1473,6 +1537,8 @@ sudo systemctl restart myapp
 7. 发布完成检查单
 
 ---
+layout: two-cols-header
+---
 
 ## A. 发布准备检查单
 
@@ -1486,7 +1552,8 @@ sudo systemctl restart myapp
 - [ ] 已明确验证负责人
 - [ ] 已确认发布窗口
 - [ ] 已通知相关团队和客服
-
+      
+::right::
 ### 代码和构建
 
 - [ ] 已通过代码格式检查
@@ -1499,6 +1566,8 @@ sudo systemctl restart myapp
 - [ ] 已完成依赖和漏洞扫描
 - [ ] 已验证构建产物完整性
 
+---
+layout: two-cols-header
 ---
 
 ## B. 配置检查单
@@ -1570,6 +1639,9 @@ sudo systemctl restart myapp
 - [ ] 已记录每个操作和时间点
 
 ---
+layout: two-cols-header
+class: text-xs
+---
 
 ## F. 发布后验证检查单
 
@@ -1588,6 +1660,7 @@ sudo systemctl restart myapp
 - [ ] 前端控制台无严重错误
 - [ ] 无明显 404、500 和超时
 
+::right::
 ### 业务验证
 
 - [ ] 用户注册正常
@@ -1790,10 +1863,13 @@ docker inspect myapp
 3. 大型Web应用
 
 ---
+layout: two-cols-header
+class: text-sm
+---
 
 ## 小型 Web 应用
 
-推荐：
+### 推荐
 
 ```text
 Git 仓库
@@ -1806,8 +1882,8 @@ PaaS / 静态托管 / 单台云服务器
   ↓
 HTTPS + 基础监控
 ```
-
-必须具备：
+::right::
+### 必须具备
 
 - 自动构建
 - 唯一版本
@@ -1817,6 +1893,8 @@ HTTPS + 基础监控
 - 基本日志
 - 可执行回滚
 
+---
+layout: two-cols-header
 ---
 
 ## 中型 Web 应用
@@ -1838,8 +1916,8 @@ CI/CD
   ↓
 日志、监控、告警
 ```
-
-重点建设：
+::right::
+### 重点建设
 
 - 滚动发布
 - 自动扩缩容
@@ -1884,12 +1962,13 @@ CI/CD
 10. 发布完成后必须持续观察
 
 ---
-layout: two-cols
+layout: two-cols-header
+class: text-sm
 ---
 
-::left::
-# 19 最终发布检查卡
 
+# 19 最终发布检查卡
+::left::
 ## 发布前
 
 - [ ] 代码已评审
