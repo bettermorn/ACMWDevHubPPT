@@ -348,7 +348,6 @@ class: text-xs
 [Unit]
 Description=My Web Application
 After=network.target
-
 [Service]
 Type=simple
 User=deploy
@@ -358,26 +357,20 @@ ExecStart=/usr/bin/node server.js
 Restart=always
 RestartSec=5
 LimitNOFILE=65535
-
 [Install]
 WantedBy=multi-user.target
 ```
-
 启用服务：
-
 ```bash
 sudo systemctl daemon-reload
 sudo systemctl enable myapp
 sudo systemctl start myapp
 sudo systemctl status myapp
 ```
-
 查看日志：
-
 ```bash
 journalctl -u myapp -f
 ```
-
 ---
 
 ## 虚拟机发布目录建议
