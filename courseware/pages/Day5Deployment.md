@@ -669,7 +669,7 @@ class: text-sm
 
 ## Kubernetes Deployment 示例
 
-```yaml{scale: 0.5}
+```yaml{scale: 0.3}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -742,7 +742,7 @@ spec:
 
 发布和检查：
 
-```bash
+```bash{scale:0.5}
 kubectl apply -f deployment.yaml
 kubectl apply -f service.yaml
 
@@ -754,7 +754,7 @@ kubectl logs deployment/myapp --tail=100
 
 回滚：
 
-```bash
+```bash{scale:0.5}
 kubectl rollout history deployment/myapp
 kubectl rollout undo deployment/myapp
 kubectl rollout status deployment/myapp
