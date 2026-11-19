@@ -303,11 +303,13 @@ flowchart LR
 ```
 
 ---
+class: text-xs
+---
 
 
 ## 虚拟机部署步骤
 
-```bash{scale: 0.6}
+```bash
 # 1. 登录服务器
 ssh deploy@example.com
 
@@ -343,7 +345,7 @@ class: text-xs
 
 ## systemd 服务示例
 
-```ini{scale: 0.6}
+```ini
 # /etc/systemd/system/myapp.service
 [Unit]
 Description=My Web Application
@@ -367,10 +369,8 @@ sudo systemctl enable myapp
 sudo systemctl start myapp
 sudo systemctl status myapp
 ```
-查看日志：
-```bash
-journalctl -u myapp -f
-```
+查看日志：journalctl -u myapp -f
+
 ---
 
 ## 虚拟机发布目录建议
@@ -1383,8 +1383,7 @@ GET /ready
 用于判断实例是否可以接收流量。
 
 示例响应：
-
-```json{scale: 0.4}
+```json
 {
   "status": "ok",
   "service": "myapp",
@@ -1444,6 +1443,7 @@ layout: two-cols-header
 
 ---
 layout: two-cols-header
+class: text-sm
 ---
 
 ## 日志规范
@@ -1466,7 +1466,7 @@ layout: two-cols-header
 
 ### 示例
 
-```json{scale: 0.5}
+```json
 {
   "level": "error",
   "service": "myapp",
