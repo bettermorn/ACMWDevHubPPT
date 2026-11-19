@@ -307,7 +307,7 @@ flowchart LR
 
 ## 虚拟机部署步骤
 
-```bash{scale: 0.8}
+```bash{scale: 0.6}
 # 1. 登录服务器
 ssh deploy@example.com
 
