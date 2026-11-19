@@ -303,12 +303,11 @@ flowchart LR
 ```
 
 ---
-class: text-xs
----
+
 
 ## 虚拟机部署步骤
 
-```bash
+```bash{scale: 0.8}
 # 1. 登录服务器
 ssh deploy@example.com
 
