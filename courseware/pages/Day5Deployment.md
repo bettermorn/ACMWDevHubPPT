@@ -672,8 +672,12 @@ class: text-sm
 - 云平台支持情况
 
 ---
+layout: two-cols-header
+---
 
 ## Kubernetes Deployment 示例
+
+::left::
 
 ```yaml
 apiVersion: apps/v1
@@ -705,26 +709,39 @@ spec:
           envFrom:
             - secretRef:
                 name: myapp-secret
-          readinessProbe:
-            httpGet:
-              path: /ready
-              port: 3000
-            initialDelaySeconds: 10
-            periodSeconds: 5
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 3000
-            initialDelaySeconds: 30
-            periodSeconds: 10
-          resources:
-            requests:
-              cpu: "100m"
-              memory: "256Mi"
-            limits:
-              cpu: "1000m"
-              memory: "512Mi"
 ```
+
+::right::
+
+```yaml
+# 接左侧 containers[0] 的后续字段
+readinessProbe:
+  httpGet:
+    path: /ready
+    port: 3000
+  initialDelaySeconds: 10
+  periodSeconds: 5
+livenessProbe:
+  httpGet:
+    path: /health
+    port: 3000
+  initialDelaySeconds: 30
+  periodSeconds: 10
+resources:
+  requests:
+    cpu: "100m"
+    memory: "256Mi"
+  limits:
+    cpu: "1000m"
+    memory: "512Mi"
+```
+
+<style>
+.slidev-layout {
+  --slidev-code-font-size: 11px;
+  --slidev-code-line-height: 1.35;
+}
+</style>
 
 ---
 layout: two-cols-header
