@@ -511,12 +511,15 @@ docker inspect --format='{{json .State.Health}}' myapp
 - 定期扫描基础镜像漏洞
 
 ---
+layout: two-cols-header
 class: text-xs
 ---
 
 ## Docker Compose 示例
 
-```yaml{scale: 0.4}
+::left::
+
+```yaml
 services:
   web:
     image: registry.example.com/myapp:${APP_VERSION}
@@ -533,7 +536,20 @@ services:
       interval: 30s
       timeout: 5s
       retries: 3
+```
 
+启动：
+
+```bash
+APP_VERSION=20260910-120000 docker compose up -d
+docker compose ps
+docker compose logs -f web
+```
+
+::right::
+
+```yaml
+services:
   db:
     image: postgres:16
     restart: unless-stopped
@@ -553,13 +569,12 @@ volumes:
   postgres_data:
 ```
 
-启动：
-
-```bash
-APP_VERSION=20260910-120000 docker compose up -d
-docker compose ps
-docker compose logs -f web
-```
+<style>
+.slidev-layout {
+  --slidev-code-font-size: 11px;
+  --slidev-code-line-height: 1.35;
+}
+</style>
 
 ---
 
@@ -1199,7 +1214,7 @@ layout: two-cols-header
 
 ### 示例
 
-```bash{scale: 0.6}
+```bash
 # 备份
 pg_dump "$DATABASE_URL" > backup-before-release.sql
 
