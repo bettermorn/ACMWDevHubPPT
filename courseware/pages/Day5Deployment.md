@@ -510,7 +510,7 @@ class: text-xs
 
 ## Docker Compose 示例
 
-```yaml{scale: 0.7}
+```yaml{scale: 0.4}
 services:
   web:
     image: registry.example.com/myapp:${APP_VERSION}
