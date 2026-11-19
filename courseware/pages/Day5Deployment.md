@@ -330,10 +330,8 @@ npm ci --omit=dev
 
 # 6. 执行数据库迁移
 npm run db:migrate
-
 # 7. 重启应用
 sudo systemctl restart myapp
-
 # 8. 检查状态
 sudo systemctl status myapp
 curl -f http://127.0.0.1:3000/health
