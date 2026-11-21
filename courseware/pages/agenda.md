@@ -74,7 +74,7 @@ class: text-xs
 ## 协作式学习
 应对失衡与复杂，从应用到创造知识，参与集体智能的训练，参与构建跨学科创新与学术共同体，“跟另一群有不同心智的人一起思考和产出”。
 ## 基础设施
-- 云服务器使用：阿里云，学生认证领取代金券，可抵扣云服务器费用。
+- 云服务器使用：阿里云，学生认证领取代金券，可抵扣云服务器费用。阿里云学生优惠卷使用入口 university.aliyun.com 
 - AI token使用：阿里云（百炼），学生代金券可抵扣AI Token费用。[国家超算互联网平台](https://www.scnet.cn/home/internet/index.html)也面向新用户提供免费Token与算力资源，并推出了普惠型算力定价。
 - 阿里云千问AI平台开发者文档 https://platform.qianwenai.com/docs/developer-guides
 - DeepSeek开发者平台 https://platform.deepseek.com/
