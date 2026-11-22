@@ -6,6 +6,7 @@ info: 面向大学本科计算机相关学生的软件创新工程实践
 author: Jane Yang
 keywords: 软件创新工程实践
 mdc: true
+routerMode: history
 lineNumbers: false
 colorSchema: light
 transition: slide-left
