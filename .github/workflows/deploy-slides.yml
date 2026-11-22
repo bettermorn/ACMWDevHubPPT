@@ -64,6 +64,7 @@ jobs:
 
       # history 模式下直接访问 /repo/courseware/4 时，GitHub Pages 找不到真实文件会返回 404.html。
       # 把 SPA 入口复制为站点根目录的 404.html（artifact 根 = courseware/dist），Slidev 路由即可按页码定位。
+      
       - name: Add SPA fallback 404.html
         run: cp dist/courseware/index.html dist/404.html
         working-directory: courseware
