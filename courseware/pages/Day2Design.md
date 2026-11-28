@@ -962,6 +962,29 @@ class: text-sm
 
 
 ---
+class: text-sm
+---
+
+# AI Agent 案例说明
+
+
+### Agent 的五个基本组成
+
+| 组成 | 位置 | 实现 |
+|---|---|---|
+| **任务拆解** | `core/planner.py` | 规则规划（默认）识别意图并拆为子任务（如 `extract→rank→kg_expand→retrieve→clauses→safety_review`）；`PLANNER_MODE=llm` 时由 LLM 规划，**只允许白名单工具**，失败回退规则 |
+| **工具调用** | `core/tools.py`, `core/agent.py` | 注册表式工具（名称/描述/参数/耗时/错误统一处理），每次调用写入轨迹：`extract_symptoms` `rank_formulas` `kg_expand` `retrieve` `clauses` `safety_review` `herb_info` |
+| **记忆** | `core/memory.py` | ① 工作记忆：会话槽位（已确认/否认症状、脉舌、患者信息、焦点方剂、已追问项）② 逐轮记录（脱敏）③ 长期记忆：咨询摘要向量 + 学习画像 |
+| **护栏** | `core/guardrails.py` | 输入（急症/自伤/提示注入/越权停药）、用药安全（孕妇/儿童/老人/基础病/毒性药）、输出（剥离模型生成的克数、绝对化承诺、未经证据支持的条号与方名） |
+| **专业知识库** | `knowledge/` | 见下 |
+
+### RAG / 知识图谱 / 记忆如何协作
+
+- **RAG**（`core/rag.py`）：pgvector 稠密检索 + 关键词稀疏检索 → RRF 融合 → 轻量重排（命中候选方加分、原文条文优先）。语料：398 条《伤寒论》原文、112 方档案与逐条方证、方族比较、方后注加减、林亿校注、鉴别要点，以及 `corpus/` 下的历代古籍（柯琴《伤寒来苏集》《伤寒论翼》、尤怡《伤寒贯珠集》、徐灵胎《伤寒论类方》、《金匮要略》、《金匮方歌括》、《汤头歌诀》、《神农本草经》）。
+- **知识图谱**（`core/kg.py`，表 `kg_nodes/kg_edges`）：节点 Formula/Herb/Feature/Channel/Pathogenesis/Treatment/Family/Modification，关系 `COMPOSED_OF` `TREATS` `IN_CHANNEL` `DERIVED_FROM` `CONTRASTS_WITH` `HAS_MODIFICATION` `CONTRAINDICATED_FOR` 等。用于：方族来历（如"桂枝加葛根汤由桂枝汤加葛根"）、变方、两方鉴别、症状→方剂的反向召回、前端子图可视化。
+- **记忆**：保证多轮追问时不丢病例；长期记忆用向量按语义召回历史咨询。
+
+---
 layout: two-cols
 class: text-sm
 ---
